@@ -1,0 +1,18 @@
+# Obsidian 配置（每人不同，不入库）
+.obsidian/
+.obsidian.workspace*
+
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+
+# 临时文件
+*.tmp
+*.swp
+*~

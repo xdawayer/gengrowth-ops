@@ -1,0 +1,30 @@
+title = "GenGrowth Ops Gitleaks Config"
+
+[extend]
+useDefault = true
+
+# 全局白名单：已知安全的路径
+[allowlist]
+description = "Global allowlist"
+paths = [
+  '''onboarding/examples/.*''',
+  '''templates/.*'''
+]
+
+# 1) API Key / Token
+[[rules]]
+id = "custom-api-key"
+description = "API key or token pattern"
+regex = '''(?i)(api[_-]?key|access[_-]?token|secret[_-]?key|token)\s*[:=]\s*["']?[A-Za-z0-9_\-]{16,}["']?'''
+tags = ["key", "token"]
+
+# 2) 业务敏感词（不应出现在 ops repo）
+[[rules]]
+id = "business-sensitive"
+description = "Sensitive business terms in ops repo"
+regex = '''(融资|估值|薪酬|股权比例|投资方)'''
+tags = ["business-sensitive"]
+
+[[rules.allowlists]]
+description = "Governance policy docs may reference these terms generically"
+paths = ['''docs/05-governance/.*''']
