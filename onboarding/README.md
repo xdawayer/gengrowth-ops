@@ -25,10 +25,13 @@
 
 ### 4.1 绑定 F5
 
-1. 设置 → 快捷键，搜 `Obsidian Git: Create backup`
-   - 这个命令 = `git add -A && git commit && git push`，一步到位
-2. 点右侧 **+**，按下 **F5**
+1. 设置 → 快捷键，搜索框输入 `commit-and-sync`（新版）或 `Create backup`（老版）
+   - 完整命令名：**`Obsidian Git: Commit-and-sync`**（= `git add -A && git commit && pull && push`，一步到位）
+   - 老版本（2024 之前）叫 `Obsidian Git: Create backup`，功能一样
+   - ⚠️ **不要**绑 `Commit all changes`（那个不会推送）或 `Create new branch`（那个是建分支）
+2. 点该命令右侧 **+**，按下 **F5**
 3. 如果提示和默认命令冲突（默认 F5 = 重新加载窗口），选 **Force** 强制覆盖
+4. 绑好后该命令右侧应显示 `F5` 而不是"未设置"
 
 ### 4.2 调插件参数
 
