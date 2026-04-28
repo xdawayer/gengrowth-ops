@@ -18,8 +18,14 @@
 ## 第三步：配置 Templater（一键新建模板）
 
 1. 设置 → Templater → **Template folder location** 填 `templates`
-2. 设置 → 快捷键，搜 `Templater: Create new note from template`
-3. 点右侧 **+**，按下 `Cmd+Alt+N`（Mac）/ `Ctrl+Alt+N`（Win）绑定
+2. **(关键)** 同一页找 **File creation location** 区块：
+   - **Default location for new files** → 选 `Specified folder`
+   - **Folder** → 填 `inbox`
+   - 作用：保证从模板新建的文件**永远落到 `inbox/`**，否则会建在你当前打开的目录里，机器人不会分拣
+3. 设置 → 快捷键，搜 `Templater: Create new note from template`
+4. 点右侧 **+**，按下 `Cmd+Alt+N`（Mac）/ `Ctrl+Alt+N`（Win）绑定
+
+> ⚠️ 如果新建的文件出现在根目录或别的目录,而不是 `inbox/`，就是第 2 步没配。机器人(`.github/workflows/dispatch.yml`)只监听 `inbox/**` 路径,**文件不在 inbox/ 下,target frontmatter 写得再对也不会被搬走**。
 
 ## 第四步：配置 Obsidian Git（F5 一键提交并推送）
 
