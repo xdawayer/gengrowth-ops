@@ -52,11 +52,13 @@
 
 ---
 
-## 第一次使用?先做这 3 件事
+## 第一次使用?先做这 4 件事
 
 1. **启用 Templater 插件**:Obsidian → 设置 → 第三方插件 → 关闭安全模式 → 浏览 → 搜 "Templater" → 安装并启用
 2. **配置模板目录**:Templater 设置 → Template folder location → 填 `templates`
-3. **(可选)绑定快捷键**:设置 → 快捷键 → 搜 "Templater: Create new note from template" → 绑 `Cmd+Alt+N`(Mac)或 `Ctrl+Alt+N`(Win)
+3. **(关键)新文件落到 inbox/**:Obsidian 设置 → **文件与链接** → 新建笔记的默认位置 → 选"在指定文件夹中" → 文件夹填 `inbox`
+   - 不配这个 → 文件会建在根目录,机器人不会分拣
+4. **(可选)绑定快捷键**:设置 → 快捷键 → 搜 "Templater: Create new note from template" → 绑 `Cmd+Alt+N`(Mac)或 `Ctrl+Alt+N`(Win)
 
 完成后,在任何位置按快捷键就能弹出模板选择器,不需要先切到 inbox/ 再操作。
 
