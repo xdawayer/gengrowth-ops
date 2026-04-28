@@ -91,7 +91,7 @@
 |---|---|
 | 按 F5 完全没反应 | 快捷键没绑成功，回 设置 → 快捷键 重新绑 |
 | 弹 "Please specify a remote" | 仓库没配 remote，找 wzb |
-| 弹 "Authentication failed" / "Invalid username or token" / "Password authentication is not supported" | **GitHub 不再接受密码推送**。装 [GitHub Desktop](https://desktop.github.com/) → 登录你的 GitHub 账号一次 → 关掉 Obsidian 重开按 F5 即可（凭证会自动存到 macOS 钥匙串供 Obsidian Git 调用）。或手动生成 fine-grained PAT，详见 wzb |
+| 弹 "Authentication failed" / "Invalid username or token" / "Password authentication is not supported" | **GitHub 不再接受密码推送**，要用 PAT(Personal Access Token)。最简方案:① 去 https://github.com/settings/tokens/new(注意是 Classic Tokens，不是 Fine-grained) ② Note 填 `obsidian-gengrowth-ops`，Expiration 选 90 days，Scopes 只勾 `repo` ③ 点 Generate，复制出现的 `ghp_xxxxx...`(只显示一次) ④ 终端 `cd` 到 vault 目录，跑 `git config --global credential.helper osxkeychain && git push`，Username 填你的 GitHub 用户名，Password 粘贴 PAT ⑤ 回 Obsidian 按 F5。如果钥匙串有旧凭证先清掉:钥匙串访问.app → 搜 `github` → 删除所有相关条目 |
 | 弹 "Nothing to commit" | 你没改任何文件，属于正常 |
 | Obsidian 报错"冲突" | 截图发 wzb，**不要强推** |
 | 模板里 `<% title %>` 没被替换 | Templater 没启用，或直接打开了模板文件本身。要走"从模板新建"流程 |
