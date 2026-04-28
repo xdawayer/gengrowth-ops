@@ -23,7 +23,6 @@ Even in our hyper-rational, algorithmically driven era, astrology provides a vit
 
 ## The Elephant in the Room: Defending Celestial Mechanics in a Quantum Era
 
-Before we dive into the granular mechanics of planetary transits, we have to address the fundamental skepticism. Most people approach astrology with the same level of intellectual rigor they apply to reading the ingredients on a cereal box—which is to say, none at all. They read a syndicated newspaper column that tells them they are going to "meet a tall dark stranger" and immediately dismiss the entire discipline as pseudo-scientific garbage.
 
 But let us logically deconstruct that, shall we? You wouldn't dismiss the entire field of modern medicine just because your uncle recommended a questionable herbal tea for a compound fracture. You have to evaluate the discipline based on its highest level of academic rigor, not its lowest common denominator.
 
