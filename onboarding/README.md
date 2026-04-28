@@ -91,7 +91,7 @@
 |---|---|
 | 按 F5 完全没反应 | 快捷键没绑成功，回 设置 → 快捷键 重新绑 |
 | 弹 "Please specify a remote" | 仓库没配 remote，找 wzb |
-| 弹 "Authentication failed" | GitHub 没登录，用 GitHub Desktop 先登录一次，或配置 PAT |
+| 弹 "Authentication failed" / "Invalid username or token" / "Password authentication is not supported" | **GitHub 不再接受密码推送**。装 [GitHub Desktop](https://desktop.github.com/) → 登录你的 GitHub 账号一次 → 关掉 Obsidian 重开按 F5 即可（凭证会自动存到 macOS 钥匙串供 Obsidian Git 调用）。或手动生成 fine-grained PAT，详见 wzb |
 | 弹 "Nothing to commit" | 你没改任何文件，属于正常 |
 | Obsidian 报错"冲突" | 截图发 wzb，**不要强推** |
 | 模板里 `<% title %>` 没被替换 | Templater 没启用，或直接打开了模板文件本身。要走"从模板新建"流程 |
