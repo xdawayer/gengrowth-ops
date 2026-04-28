@@ -77,7 +77,53 @@
 3. 通知栏弹出 "Committed and pushed" 即成功
 4. 去 GitHub `xdawayer/gengrowth-ops` 看是否出现新文件
 
-## 第五步：完整跑一遍
+## 第五步（可选，更省心）：用 SSH 替代 PAT
+
+PAT 90 天要换一次，SSH **永久不过期**。如果想一劳永逸，按下面配（终端里做）：
+
+```bash
+# 1. 生成密钥（连按 3 次回车，密码留空）
+ssh-keygen -t ed25519 -C "yuiteatime@github"
+
+# 2. 启动 agent 并写入钥匙串
+eval "$(ssh-agent -s)"
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+
+# 3. 复制公钥
+pbcopy < ~/.ssh/id_ed25519.pub
+```
+
+然后打开 https://github.com/settings/ssh/new ：
+- Title 随便填，Key 粘贴（`Cmd+V`），点 Add SSH key
+
+回到终端：
+
+```bash
+# 4. 验证连通（第一次会问 yes/no）
+ssh -T git@github.com
+# 看到 "Hi Yuiteatime!" 就是通了
+
+# 5. 仓库 remote 从 https 切到 ssh
+cd /到/gengrowth-ops/路径
+git remote set-url origin git@github.com:xdawayer/gengrowth-ops.git
+
+# 6. 推送验证
+git push
+```
+
+回 Obsidian 按 F5，通知 "Pushed N commits" 即成功，从此不再问账号密码。
+
+> 还要在 `~/.ssh/config` 加几行让 macOS 自动加载密钥（开机不用再 `ssh-add`）：
+> ```
+> Host github.com
+>   HostName github.com
+>   User git
+>   AddKeysToAgent yes
+>   UseKeychain yes
+>   IdentityFile ~/.ssh/id_ed25519
+> ```
+
+## 第六步：完整跑一遍
 
 1. 按 `Cmd+Alt+N`（Mac）/ `Ctrl+Alt+N`（Win）
 2. 选择"草稿-内容草稿"模板
