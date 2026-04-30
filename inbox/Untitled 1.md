@@ -40,8 +40,7 @@
 - 主要竞品（2-3 个）：
 - https://cafeastrology.com
 - https://www.astrology.com
-- https://www.astro.com
-
+- https://www.astro.com/
 ### 流量现状
 
 | 指标 | 数值 | 备注 |
