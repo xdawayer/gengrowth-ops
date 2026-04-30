@@ -61,13 +61,13 @@ aliases:
 
 **示例维度（以 indie dev 工具站为例）：**
 
-| 维度 | 种子词示例 |
-|------|----------|
+| 维度   | 种子词示例                                       |
+| ---- | ------------------------------------------- |
 | 用户角色 | indie developer, solo founder, indie hacker |
-| 问题类型 | get more users, increase traffic, grow app |
-| 工具类型 | seo tool, marketing tool, growth tool |
-| 使用场景 | launch product, grow saas, app marketing |
-| 竞品名称 | ahrefs alternative, jasper alternative |
+| 问题类型 | get more users, increase traffic, grow app  |
+| 工具类型 | seo tool, marketing tool, growth tool       |
+| 使用场景 | launch product, grow saas, app marketing    |
+| 竞品名称 | ahrefs alternative, jasper alternative      |
 
 ---
 
