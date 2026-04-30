@@ -41,6 +41,9 @@
 - https://cafeastrology.com
 - https://www.astrology.com
 - https://www.astro.com/
+建议/五分钟体验阶段遇到的问题：
+星盘数据在账号注销后有残留
+
 ### 流量现状
 
 | 指标 | 数值 | 备注 |
