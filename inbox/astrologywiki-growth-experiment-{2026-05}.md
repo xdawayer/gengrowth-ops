@@ -200,10 +200,17 @@ aliases:
 操作路径：Ahrefs → Site Explorer → 竞品域名 → Top Pages
 
 - 导出 Top 50 页面（按估算流量排序）
+-www.astrology.com
+https://docs.google.com/spreadsheets/d/1vmJSjh1beiMujPxa1l6joBraQFLZ_NTHM1GijEPfDs4/edit?usp=sharing
 -cafeastrology.com
--https://docs.google.com/spreadsheets/d/1k1thRw8wnFoFhRb3uK-XAde14mzHe3_VlwPhDtDrii8/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1k1thRw8wnFoFhRb3uK-XAde14mzHe3_VlwPhDtDrii8/edit?usp=sharing
 - 标记：哪些话题/关键词类型带来了最多流量？
+birth chart
+X horoscope
+astrology
+
 - 判断：这些话题我们能写出更好的内容吗？
+内容方面我们可以做出更好的质量，但是这些关键词难度普遍偏高
 
 ### 3.2 内容缺口分析
 
