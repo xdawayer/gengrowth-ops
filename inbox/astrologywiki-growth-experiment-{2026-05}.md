@@ -163,12 +163,12 @@ aliases:
 竞品 URL 列表从 GenGrowth 产品档案获取（Step 0 已确认）。
 下表中的数据gengrowth→Competitors→ Benchmarking Dashboard页面中的数据，和Ahrefs 的数据有出入
 
-| 指标                | 自有站www.astrologywiki.com | 竞品Ahttps://cafeastrology.com | 竞品 Bwww.astrology.com | 差距  |
-| ----------------- | ------------------------ | ---------------------------- | --------------------- | --- |
-| DR（Domain Rating） | 0                        | 75                           | 73                    |     |
-| 引用域名数             | 45                       | 8.2K                         | 8.7K                  |     |
-| 估算月均自然流量          | 0                        | 2.9M                         | 556K                  |     |
-| 排名关键词数            | 0                        | 14.2K                        | 6.1K                  |     |
+| 指标                | 自有站www.astrologywiki.com | 竞品A https://cafeastrology.com | 竞品 B www.astrology.com | 差距  |
+| ----------------- | ------------------------ | ----------------------------- | ---------------------- | --- |
+| DR（Domain Rating） | 0                        | 75                            | 73                     |     |
+| 引用域名数             | 45                       | 8.2K                          | 8.7K                   |     |
+| 估算月均自然流量          | 0                        | 2.9M                          | 556K                   |     |
+| 排名关键词数            | 0                        | 14.2K                         | 6.1K                   |     |
 
 > **DR 差距判断**：若自有站 DR 比竞品低 30+ 分，DR 匹配预检会过滤大量词，初始可执行词库会较小，需要在外链建设上更积极。
 
