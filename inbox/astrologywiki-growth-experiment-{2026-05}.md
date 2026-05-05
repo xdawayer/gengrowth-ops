@@ -200,7 +200,8 @@ aliases:
 操作路径：Ahrefs → Site Explorer → 竞品域名 → Top Pages
 
 - 导出 Top 50 页面（按估算流量排序）
-- 
+-cafeastrology.com
+-https://docs.google.com/spreadsheets/d/1k1thRw8wnFoFhRb3uK-XAde14mzHe3_VlwPhDtDrii8/edit?usp=sharing
 - 标记：哪些话题/关键词类型带来了最多流量？
 - 判断：这些话题我们能写出更好的内容吗？
 
