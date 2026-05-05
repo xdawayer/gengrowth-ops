@@ -218,6 +218,7 @@ astrology
 
 - 对比对象：2-3 个主要竞品
 - 过滤条件：至少 2 个竞品排名，自有站不排名
+https://docs.google.com/spreadsheets/d/1SIwkgt5zrPi7jykDU-w2UZPa-_55GAmvq78JEX_9e7E/edit?usp=sharing
 - 导出结果，粗筛后填入关键词主表（来源：内容缺口）
 
 ### 3.3 竞品关键词映射
