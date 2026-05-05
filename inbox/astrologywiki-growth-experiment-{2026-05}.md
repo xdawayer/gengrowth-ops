@@ -200,7 +200,7 @@ aliases:
 操作路径：Ahrefs → Site Explorer → 竞品域名 → Top Pages
 
 - 导出 Top 50 页面（按估算流量排序）
-该表格导出后没有kd指标
+==该表格导出后没有kd指标==
 -www.astrology.com
 https://docs.google.com/spreadsheets/d/1vmJSjh1beiMujPxa1l6joBraQFLZ_NTHM1GijEPfDs4/edit?usp=sharing
 -cafeastrology.com
@@ -289,7 +289,7 @@ https://docs.google.com/spreadsheets/d/1meQnMZRGFsAqyg5TUwY5Ayv1v9SE_AvNw0kkNLF9
 
 1. 所有来源的关键词导入 Google Sheets（`keyword-sheet-setup.gs` 生成的模板）
 2. 填写 A-H 列数据：关键词 / 来源 / 月搜索量 / KD / CPC / Trends 比值 / DR差距
-以上几个数据，每个表导出的会有不同，比如有的表没有cpc，有的表没有DR差距，没法整合为一个表，我的建议是减少需要填的数据，仅保留关键词 / 来源 / 月搜索量 / KD / 
+==以上几个数据，每个表导出的会有不同，比如有的表没有cpc，有的表没有DR差距，没法整合为一个表，我的建议是减少需要填的数据，仅保留关键词 / 来源 / 月搜索量 / KD /== 
 3. I / J / K 列公式自动计算（意图词检测 / DR 过滤 / 分桶）
 4. 对 CPC = 0 的词：复制词列表，让 Claude/GPT 批量判断是否有商业意图（`I2` 列可手动覆盖）
 
