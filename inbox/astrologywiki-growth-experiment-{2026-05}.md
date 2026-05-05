@@ -161,6 +161,7 @@ aliases:
 ### 2.3 Ahrefs Domain Overview（自有站 + 竞品）
 
 竞品 URL 列表从 GenGrowth 产品档案获取（Step 0 已确认）。
+下表中的数据gengrowth→Competitors→ Benchmarking Dashboard页面中的数据，和Ahrefs 的数据有出入
 
 | 指标                | 自有站www.astrologywiki.com | 竞品Ahttps://cafeastrology.com | 竞品 Bwww.astrology.com | 差距  |
 | ----------------- | ------------------------ | ---------------------------- | --------------------- | --- |
@@ -175,12 +176,12 @@ aliases:
 
 **目标**：了解当前外链现状，识别快速可拿的外链机会，Week 1 启动执行。
 
-| 检查项 | 工具 | 记录内容 |
-|-------|------|---------|
-| 当前引用域名数 | Ahrefs → Backlinks | 总数 + 有效 dofollow 数 |
-| 主要来源类型 | Ahrefs → Referring domains | 社区 / 目录 / 媒体 / 其他 |
-| 竞品已有但自有站没有的目录/来源 | Ahrefs → Link Intersect | 列出前 10 个机会 |
-| 未附链接的品牌提及 | Ahrefs → Alerts（设置监控） | 配置品牌关键词监控，后续持续处理 |
+| 检查项              | 工具                         | 记录内容               |
+| ---------------- | -------------------------- | ------------------ |
+| 当前引用域名数          | Ahrefs → Backlinks         | 总数 + 有效 dofollow 数 |
+| 主要来源类型           | Ahrefs → Referring domains | 社区 / 目录 / 媒体 / 其他  |
+| 竞品已有但自有站没有的目录/来源 | Ahrefs → Link Intersect    | 列出前 10 个机会         |
+| 未附链接的品牌提及        | Ahrefs → Alerts（设置监控）      | 配置品牌关键词监控，后续持续处理   |
 
 > 外链基线检查的产出是 **"快速机会清单"**，交给 Track A 负责人作为 Week 1 外链执行的起点。  
 > 不需要 Day 0 当天执行任何外链动作，只需要知道从哪里开始。
