@@ -230,6 +230,8 @@ https://docs.google.com/spreadsheets/d/1SIwkgt5zrPi7jykDU-w2UZPa-_55GAmvq78JEX_9
 - 过滤掉纯品牌词和不相关词
 cafeastrology.com
 https://docs.google.com/spreadsheets/d/16CJfF0sqDMPkSMto8LKNfOMJLFheVotQV3FTNj1avpA/edit?usp=sharing
+astrology.com
+https://docs.google.com/spreadsheets/d/1meQnMZRGFsAqyg5TUwY5Ayv1v9SE_AvNw0kkNLF9dKk/edit?usp=sharing
 
 - 填入关键词主表（来源：竞品映射）
 
