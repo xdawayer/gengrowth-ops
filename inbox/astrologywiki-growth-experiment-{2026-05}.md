@@ -103,9 +103,9 @@ aliases:
    - 最可能付费的用户画像（一句话）
    -具有进取心，渴望了解自我改变自身情况的年轻人、渴望获得专业占星术知识的爱好者、迷信占星学生活方式的主妇类群体
    - 用户为什么选它而不选竞品（差异化核心）
-   - [www.astro.com/cgi/ade.cgi](http://www.astro.com/cgi/ade.cgi) :注册流程更加简洁 [www.astrology.com](http://www.astrology.com/) ：购买计划更加便宜，且有7天免费体验 （这一部分相当的主观，没有的对比标准，例如页面美观程度、网站加载速度、商品定价、提供服务差异等）
+   - [www.astro.com/cgi/ade.cgi](http://www.astro.com/cgi/ade.cgi) :注册流程更加简洁 [www.astrology.com](http://www.astrology.com/) ：购买计划更加便宜，且有7天免费体验 ==（这一部分相当的主观，没有的对比标准，例如页面美观程度、网站加载速度、商品定价、提供服务差异等）==
 1. **将修正结果回写 GenGrowth 产品档案**
-目前用时大概30min，主要用时在体验产品初期流程，以及查看竞品链接是否正确，对比与竞品所提供的价格以及服务
+==目前用时大概30min，主要用时在体验产品初期流程，以及查看竞品链接是否正确，对比与竞品所提供的价格以及服务== 
 
 > 如果修正后三个核心问题仍回答不清楚，先和产品负责人确认，不要带着模糊假设启动分析。  
 > 目标是把 30 分钟缩短到 15 分钟——GenGrowth 提供的草稿质量越高，这一步越快。
@@ -138,13 +138,13 @@ aliases:
 
 操作路径：GSC → Search results
 
-| 数据维度 | 时间范围 | 获取方式 | 填入模板字段 |
-|---------|---------|---------|------------|
-| 总 clicks / impressions / CTR | 过去 28 天 + 过去 90 天 | 直接读取 | 流量现状 |
-| 品牌词 vs 非品牌词拆分 | 过去 28 天 | 在 Queries 中过滤品牌关键词 | 自然搜索占比备注 |
-| Top 20 queries | 过去 28 天 | 按 clicks 排序导出 | 核心关键词排名（前 3） |
-| Top 10 landing pages | 过去 28 天 | Pages tab，按 clicks 排序 | 内容资产盘点 |
-| Page 1/2/3 词数分布 | 过去 28 天 | 按 position 过滤：1-10 / 11-20 / 21-30 | 内容资产盘点 |
+| 数据维度                         | 时间范围              | 获取方式                               | 填入模板字段       |
+| ---------------------------- | ----------------- | ---------------------------------- | ------------ |
+| 总 clicks / impressions / CTR | 过去 28 天 + 过去 90 天 | 直接读取                               | 流量现状         |
+| 品牌词 vs 非品牌词拆分                | 过去 28 天           | 在 Queries 中过滤品牌关键词                 | 自然搜索占比备注     |
+| Top 20 queries               | 过去 28 天           | 按 clicks 排序导出                      | 核心关键词排名（前 3） |
+| Top 10 landing pages         | 过去 28 天           | Pages tab，按 clicks 排序              | 内容资产盘点       |
+| Page 1/2/3 词数分布              | 过去 28 天           | 按 position 过滤：1-10 / 11-20 / 21-30 | 内容资产盘点       |
 
 > **关键判断**：非品牌词占比。若非品牌自然流量近乎为零，SEO 从零起步；若已有一批 P11-P30 的词，内容刷新会是最快提升路径。
 
@@ -200,6 +200,7 @@ aliases:
 操作路径：Ahrefs → Site Explorer → 竞品域名 → Top Pages
 
 - 导出 Top 50 页面（按估算流量排序）
+该表格导出后没有kd指标
 -www.astrology.com
 https://docs.google.com/spreadsheets/d/1vmJSjh1beiMujPxa1l6joBraQFLZ_NTHM1GijEPfDs4/edit?usp=sharing
 -cafeastrology.com
@@ -288,6 +289,7 @@ https://docs.google.com/spreadsheets/d/1meQnMZRGFsAqyg5TUwY5Ayv1v9SE_AvNw0kkNLF9
 
 1. 所有来源的关键词导入 Google Sheets（`keyword-sheet-setup.gs` 生成的模板）
 2. 填写 A-H 列数据：关键词 / 来源 / 月搜索量 / KD / CPC / Trends 比值 / DR差距
+以上几个数据，每个表导出的会有不同，比如有的表没有cpc，有的表没有DR差距，没法整合为一个表，我的建议是减少需要填的数据，仅保留关键词 / 来源 / 月搜索量 / KD / 
 3. I / J / K 列公式自动计算（意图词检测 / DR 过滤 / 分桶）
 4. 对 CPC = 0 的词：复制词列表，让 Claude/GPT 批量判断是否有商业意图（`I2` 列可手动覆盖）
 
