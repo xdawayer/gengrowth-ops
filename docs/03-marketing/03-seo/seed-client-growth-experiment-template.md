@@ -100,9 +100,8 @@ aliases:
 
 #### 关键词规划（Week 1）
 
-> 详细执行流程参照《关键词研究 SOP》（待建）。初始关键词池来自以下五个来源，缺任何一个都会有盲区。
-
-> 详细方法论参照《关键词研究 SOP》（`docs/03-marketing/keyword-research-sop.md`）。
+> **初始关键词主表已在 Day 0 Steps 3–5 产出**（竞品SEO分析 + 种子词拓展 + 关键词分桶）。Week 1 直接从主表取用，按分桶结果执行，不从零开始。  
+> 详细方法论参照《关键词研究 SOP》（`docs/03-marketing/03-seo/keyword-research-sop.md`），竞品选择策略见该文档零节。
 
 **六大来源一览：**
 
