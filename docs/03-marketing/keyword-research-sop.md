@@ -61,13 +61,13 @@ aliases:
 
 **示例维度（以 indie dev 工具站为例）：**
 
-| 维度   | 种子词示例                                       |
-| ---- | ------------------------------------------- |
+| 维度 | 种子词示例 |
+|------|----------|
 | 用户角色 | indie developer, solo founder, indie hacker |
-| 问题类型 | get more users, increase traffic, grow app  |
-| 工具类型 | seo tool, marketing tool, growth tool       |
-| 使用场景 | launch product, grow saas, app marketing    |
-| 竞品名称 | ahrefs alternative, jasper alternative      |
+| 问题类型 | get more users, increase traffic, grow app |
+| 工具类型 | seo tool, marketing tool, growth tool |
+| 使用场景 | launch product, grow saas, app marketing |
+| 竞品名称 | ahrefs alternative, jasper alternative |
 
 ---
 
@@ -145,11 +145,11 @@ aliases:
 
 ### 桶内排序（每桶单一维度）
 
-| 桶 | 排序维度 | 逻辑 |
-|----|---------|------|
-| 趋势词 | Trends 比值降序 | 趋势越陡，窗口越紧迫 |
-| 快速胜利 | 月搜索量降序 | 赢了要赢得有价值 |
-| 战略词 | CPC 降序 | 商业价值越高越优先 |
+| 桶      | 排序维度              | 逻辑            |
+| ------ | ----------------- | ------------- |
+| 趋势词    | Trends 比值降序       | 趋势越陡，窗口越紧迫    |
+| 快速胜利   | 月搜索量降序            | 赢了要赢得有价值      |
+| 战略词    | CPC 降序            | 商业价值越高越优先     |
 | 长尾/社区词 | 主题相关度（1-3 手动打分）降序 | 与现有内容集群越近权重越高 |
 
 ---
