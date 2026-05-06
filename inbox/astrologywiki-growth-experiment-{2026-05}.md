@@ -354,9 +354,9 @@ https://docs.google.com/spreadsheets/d/1meQnMZRGFsAqyg5TUwY5Ayv1v9SE_AvNw0kkNLF9
 
 执行完 Step 0-6 后，以下内容应全部完成：
 
-- [ ] 模板 Section I（Day 0 诊断基线）填写完整
-- [ ] GenGrowth 产品档案已修正并回写
-- [ ] 关键词主表初始版本（300-500 词，已自动分桶）
+- [x] 模板 Section I（Day 0 诊断基线）填写完整
+- [x] GenGrowth 产品档案已修正并回写
+- [x] 关键词主表初始版本（300-500 词，已自动分桶）
 - [ ] 实验核心假设表（3 条假设 + 反证条件）
 - [ ] 竞品基线快照（产品层 + SEO 层，含 DR / 引用域名 / 估算流量）
 - [ ] 外链快速机会清单（交 Track A 负责人，Week 1 执行）
