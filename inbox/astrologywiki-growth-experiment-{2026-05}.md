@@ -290,7 +290,14 @@ https://docs.google.com/spreadsheets/d/1meQnMZRGFsAqyg5TUwY5Ayv1v9SE_AvNw0kkNLF9
 
 1. 所有来源的关键词导入 Google Sheets（`keyword-sheet-setup.gs` 生成的模板）
 2. 填写 A-H 列数据：关键词 / 来源 / 月搜索量 / KD / CPC / Trends 比值 / DR差距
-==以上几个数据，每个表导出的会有不同，比如有的表没有cpc，有的表没有DR差距，没法整合为一个表，我的建议是减少需要填的数据，仅保留关键词 / 来源 / 月搜索量 / KD /== 
+==以上几个数据，每个表导出的会有不同，比如有的表没有cpc，有的表没有DR差距，没法整合为一个表，我的建议是== 
+### Step 5 关键词分桶（修正版）
+    1. **汇总去重**：将 Step 3 & 4 获得的所有词汇总到临时表，执行去重。
+    2. **统一补全指标（关键）**：
+       - 将去重后的词表贴回 Ahrefs Keywords Explorer。
+       - 统一导出包含 KD, Volume, CPC 的最新数据。
+       - 这样可以解决不同来源导致的数据维度缺失问题。
+    3. **导入模板**：将统一后的数据填入 `keyword-sheet-setup.gs` 模板。
 3. I / J / K 列公式自动计算（意图词检测 / DR 过滤 / 分桶）
 4. 对 CPC = 0 的词：复制词列表，让 Claude/GPT 批量判断是否有商业意图（`I2` 列可手动覆盖）
 
