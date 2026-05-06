@@ -302,6 +302,7 @@ https://docs.google.com/spreadsheets/d/1meQnMZRGFsAqyg5TUwY5Ayv1v9SE_AvNw0kkNLF9
 4. 对 CPC = 0 的词：复制词列表，让 Claude/GPT 批量判断是否有商业意图（`I2` 列可手动覆盖）
 
 **分桶结果验证**：
+https://docs.google.com/spreadsheets/d/1SdWi1xLjhnWHUGXgtLRcDYQUe7c_1jFD_Mc9_cqIJE0/edit?usp=sharing
 
 | 桶 | 最少需要多少词才能启动？ | 如果不足怎么办 |
 |---|---|---|
