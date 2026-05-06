@@ -22,7 +22,7 @@ aliases:
 关联文档：
 1. [GenGrowth整体营销框架](../../03-marketing/01-strategy/GenGrowth整体营销框架.md)
 2. [GenGrowth 社交媒体运营规范](../../03-marketing/02-social-media/social-media-operations.md)
-3. [GenGrowth SEO 运营规范](../../03-marketing/03-seo/seo-operations.md)
+3. [GenGrowth SEO 运营规范](../../../每日日报/seo-operations.md)
 4. [平台账号注册与养号手册](../../05-governance/account-access/2026-03-12-platform-account-registration-playbook.md)
 5. [项目规划](./项目规划.md)
 
@@ -109,5 +109,5 @@ aliases:
 
 1. 长期营销框架见 [GenGrowth整体营销框架](../../03-marketing/01-strategy/GenGrowth整体营销框架.md)。
 2. 社媒执行规则见 [GenGrowth 社交媒体运营规范](../../03-marketing/02-social-media/social-media-operations.md)。
-3. SEO/GEO 执行规则见 [GenGrowth SEO 运营规范](../../03-marketing/03-seo/seo-operations.md)。
+3. SEO/GEO 执行规则见 [GenGrowth SEO 运营规范](../../../每日日报/seo-operations.md)。
 4. 账号治理见 [平台账号注册与养号手册](../../05-governance/account-access/2026-03-12-platform-account-registration-playbook.md)。
