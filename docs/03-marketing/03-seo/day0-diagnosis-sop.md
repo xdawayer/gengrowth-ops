@@ -1,5 +1,5 @@
 ---
-title: Day 0 诊断执行 SOP
+title: Day 0 全站诊断 SOP（Steps 0-6 · 约5小时）
 date: 2026-04-29
 updated: 2026-04-29
 type: sop
@@ -11,6 +11,7 @@ tags:
   - diagnosis
 aliases:
   - Day 0 诊断 SOP
+  - Day 0 SOP
   - 种子客户诊断流程
 ---
  

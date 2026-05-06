@@ -1,5 +1,5 @@
 ---
-title: 关键词研究 SOP
+title: 关键词研究 SOP（六源挖掘 → 四桶分级）
 date: 2026-04-29
 updated: 2026-04-29
 type: sop
@@ -11,6 +11,7 @@ tags:
 aliases:
   - keyword SOP
   - 关键词SOP
+  - 关键词研究与分桶
 ---
 
 # 关键词研究 SOP

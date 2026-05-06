@@ -1,5 +1,5 @@
 ---
-title: 种子客户增长实验记录模板
+title: 种子客户增长实验记录 · 主模板（60天双轨）
 date: 2026-04-29
 updated: 2026-04-29
 type: template
@@ -11,6 +11,7 @@ tags:
   - experiment
 aliases:
   - 增长实验记录模板
+  - 种子客户主模板
   - growth experiment template
 ---
 
@@ -40,7 +41,7 @@ aliases:
 ## 一、Day 0 诊断基线
 
 > 使用 GenGrowth 审计工具输出，补充人工判断。两条轨道均基于此诊断启动。  
-> **完整执行步骤参照** → `docs/03-marketing/day0-diagnosis-sop.md`（总时长约 5 小时，输出可增长性判断）
+> **完整执行步骤参照** → `docs/03-marketing/03-seo/day0-diagnosis-sop.md`（总时长约 5 小时，输出可增长性判断）
 
 ### 产品档案
 
