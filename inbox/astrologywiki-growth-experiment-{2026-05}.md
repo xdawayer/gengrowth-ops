@@ -445,7 +445,7 @@ https://docs.google.com/spreadsheets/d/1meQnMZRGFsAqyg5TUwY5Ayv1v9SE_AvNw0kkNLF9
   
 
 **分桶结果验证**：
-https://docs.google.com/spreadsheets/d/1ClUEvOnpPznH3z4pjV6m_bBv6TdhSsT5U9pF2BJT98E/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1ClUEvOnpPznH3z4pjV6m_bBv6TdhSsT5U9pF2BJT98E/edit?usp=sharingg
 
 | 桶 | 最少需要多少词才能启动？ | 如果不足怎么办 |
 |---|---|---|
