@@ -291,15 +291,71 @@ https://docs.google.com/spreadsheets/d/1meQnMZRGFsAqyg5TUwY5Ayv1v9SE_AvNw0kkNLF9
 1. 所有来源的关键词导入 Google Sheets（`keyword-sheet-setup.gs` 生成的模板）
 2. 填写 A-H 列数据：关键词 / 来源 / 月搜索量 / KD / CPC / Trends 比值 / DR差距
 ==以上几个数据，每个表导出的会有不同，比如有的表没有cpc，有的表没有DR差距，没法整合为一个表，我的建议是== 
-### Step 5 关键词分桶（修正版）
-    1. **汇总去重**：将 Step 3 & 4 获得的所有词汇总到临时表，执行去重。
-    2. **统一补全指标（关键）**：
-       - 将去重后的词表贴回 Ahrefs Keywords Explorer。
-       - 统一导出包含 KD, Volume, CPC 的最新数据。
-       - 这样可以解决不同来源导致的数据维度缺失问题。
-    3. **导入模板**：将统一后的数据填入 `keyword-sheet-setup.gs` 模板。
 3. I / J / K 列公式自动计算（意图词检测 / DR 过滤 / 分桶）
 4. 对 CPC = 0 的词：复制词列表，让 Claude/GPT 批量判断是否有商业意图（`I2` 列可手动覆盖）
+**Step 5 — 关键词分桶（精简高效版）**
+
+  **核心逻辑：先定性标签，后统一补全指标，最后利用 VLOOKUP 自动化合龙。**
+
+  _5.1 原始数据“打标” (Phase: Pre-processing)_
+
+  在将 Ahrefs 的各处导出的 CSV 汇总前，先给它们盖章：
+
+   1. **分头处理**：打开 Content Gap.csv、Competitor.csv 等原始文件。
+
+   2. **新增 Source 列**：在最后一列手动加上表头 Source。
+
+   3. **批量填充**：根据来源填入“内容缺口”、“竞品映射”等标签。
+
+   4. **汇总**：将所有文件的“关键词”和“Source”两列内容粘贴到一个 Google Sheet 中（命名为 [标签表]）。
+
+  _5.2 汇总去重 (Phase: Deduplication)_
+
+   1. **全选** **[标签表]**。
+
+   2. **执行去重**：数据 -> 数据清理 -> 移除重复项。
+
+   3. **关键设置**：只勾选“关键词”列。这样你会得到一个唯一的关键词清单，且每个词都保留了它第一次出现的来源标签。
+
+  _5.3 批量数据补全 (Phase: Batch Enrichment)_
+
+   4. **复制**去重后的纯关键词清单。
+
+   5. **Ahrefs 操作**：打开 **Keywords Explorer**，粘贴清单，点击查询。
+
+   6. **标准化导出**：点击 **Export**。你将得到一个包含统一 Volume、Difficulty (KD) 和 CPC 的 CSV 文件。
+
+   7. **创建** **[指标表]**：将导出的内容贴入 Google Sheet 的另一个工作表。
+
+  _5.4 标签与指标“合龙” (Phase: Integration)_
+
+  在 [指标表] 中，利用磁铁公式把标签吸回来：
+
+   8. **公式输入**：在 [指标表] 的末尾列（假设是 F2）输入：
+
+       * **Mac 推荐法**：=ARRAYFORMULA(VLOOKUP(A2:A, '标签表'!A:B, 2, FALSE))（写这一个公式，全列自动填满）。
+
+       * **手动法**：使用 VLOOKUP 后，选中单元格，按 **Command + D** 向下填充。
+
+   8. **固化数据**：选中该列，Command + C 复制，然后 右键 -> 选择性粘贴 -> 仅粘贴值（消除公式）。
+
+  _5.5 填入 GenGrowth 模板 (Phase: Final Setup)_
+
+   9. **对齐列顺序**：调整 [指标表]，确保前五列顺序为：
+
+       * A：关键词 (Keyword)
+
+       * B：来源 (Source)
+
+       * C：月搜索量 (Volume) —— _即 CSV 中的原始 Volume 字段_
+
+       * D：KD (Difficulty)
+
+       * E：CPC (CPC)
+
+   2. **粘贴入主表**：将这五列粘贴到由 keyword-sheet-setup.gs 生成的“关键词主表”中。
+
+   3. **忽略项**：Trends 比值 和 DR 差距 留空，除非遇到极其看重的核心词再手动抽查。
 
 **分桶结果验证**：
 https://docs.google.com/spreadsheets/d/1SdWi1xLjhnWHUGXgtLRcDYQUe7c_1jFD_Mc9_cqIJE0/edit?usp=sharing
