@@ -204,7 +204,10 @@ https://docs.google.com/spreadsheets/d/1JPi0w8FInRYZYcEbbDmTBVkJJ69p1ZdgROhYHFSZ
 https://www.georgianicols.com/ ：
 https://docs.google.com/spreadsheets/d/1xrxRniv2GeZ4RpkeahktpP8kzyMNC5N_FEaexPHaAA0/edit?usp=sharing
 **步骤 B — 关键词直接导出（仅限战术 / 基准竞品，DR 差距 ≤ 30）**
-
+www.birthchart.net/ ：
+https://docs.google.com/spreadsheets/d/11GoCovdNRk-JicFcbXTUIbqrgYa2DEBvO9gUDAzEPYA/edit?usp=sharing
+https://www.georgianicols.com/ ：
+https://docs.google.com/spreadsheets/d/1VWFT0b-D9GZ-ianAJ6D2nYops60qL_ACQLQ6H12lVG4/edit?usp=sharing
 内容缺口
 
 
