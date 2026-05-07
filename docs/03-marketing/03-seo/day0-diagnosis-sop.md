@@ -81,7 +81,7 @@ aliases:
 | 2   | GA4 data stream 已配置，有 Analyst 以上权限 | GA4 → Admin → Property Access Management |
 | 3   | Ahrefs 或 SEMrush 账号可用              | 登录验证                                     |
 | 4   | GenGrowth 审计工具可访问                  | 登录验证                                     |
-| 5   | 已确认 2-3 个主要竞品 URL                  | 由 Lynne 或客户提供                            |
+| 5   | 已确认 2-3 个主要竞品 URL                  | SEO 运营自行查找（SERP 分析 + 品类搜索）；产品方或客户可提供补充建议或确认 |
 | 6   | 已了解产品核心功能和目标用户                     | 与客户或产品负责人 30 分钟沟通                        |
 
 ---
