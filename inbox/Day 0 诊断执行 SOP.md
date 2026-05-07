@@ -88,6 +88,9 @@
    - 对 GenGrowth 初始列表里的每个竞品，快速查 Ahrefs 确认 DR
    - 标注对标用途：**DR 差距 ≤ 30 → 可关键词对标**；**DR 差距 > 30 → 仅做话题发现**
    - 如果所有竞品 DR 差距都 > 30 → 在 Google 搜索 3 个核心词，从 Top 10 里找 DR 较低的站补入
+ https://advanced-astrology.com/ DR28 
+ https://www.georgianicols.com/ DR27
+ 
    - 输出：每个竞品标注"关键词对标 / 话题发现"，Step 2.3 和 Step 3 按此区分使用
 
 > 竞品选择详细策略参照《关键词研究 SOP》零节。
