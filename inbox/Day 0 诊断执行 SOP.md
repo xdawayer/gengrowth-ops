@@ -198,7 +198,7 @@
 > Day 0 SOP 不重复执行步骤。方法论以关键词研究 SOP 为准，此处只记录本步骤的输出目标。
 
 **本步骤产出（完成后需填入）：**
-竞品关键词映射
+top pages
 https://www.birthchart.net/ ：
 https://docs.google.com/spreadsheets/d/1JPi0w8FInRYZYcEbbDmTBVkJJ69p1ZdgROhYHFSZjZM/edit?usp=sharing
 https://www.georgianicols.com/ ：
