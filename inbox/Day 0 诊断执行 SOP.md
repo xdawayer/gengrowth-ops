@@ -90,6 +90,7 @@
    - 如果所有竞品 DR 差距都 > 30 → 在 Google 搜索 3 个核心词，从 Top 10 里找 DR 较低的站补入
  https://www.georgianicols.com/ DR27
  https://www.galacticcenter.org/ DR26
+ https://www.birthchart.net/ DR28
    - 输出：每个竞品标注"关键词对标 / 话题发现"，Step 2.3 和 Step 3 按此区分使用
 
 > 竞品选择详细策略参照《关键词研究 SOP》零节。
@@ -157,12 +158,12 @@
 
 > 快速判断：查候选词的 SERP Top 10 平均 DR。有 2 个以上 DR < 你的站 → 可执行；平均 DR > 你的站 + 30 → 跳过。
 
-| 指标                | 自有站 <br>www.astrologywiki.com | 竞品 A <br>https://www.georgianicols.com/ | 竞品 B <br>https://www.galacticcenter.org/ | 差距  |
-| ----------------- | ----------------------------- | --------------------------------------- | ---------------------------------------- | --- |
-| DR（Domain Rating） | 0                             | 27                                      | 26                                       |     |
-| 引用域名数             | 49                            | 625                                     | 308                                      |     |
-| 估算月均自然流量          | 0                             | 229K                                    | 10.7K                                    |     |
-| 排名关键词数            | 0                             | 486                                     | 24                                       |     |
+| 指标                | 自有站 <br>www.astrologywiki.com | 竞品 A <br>https://www.georgianicols.com/ | 竞品 B https://www.birthchart.net/ | 差距  |
+| ----------------- | ----------------------------- | --------------------------------------- | -------------------------------- | --- |
+| DR（Domain Rating） | 0                             | 27                                      | 28                               |     |
+| 引用域名数             | 49                            | 625                                     | 2.7K                             |     |
+| 估算月均自然流量          | 0                             | 229K                                    | 173K                             |     |
+| 排名关键词数            | 0                             | 486                                     | 1.3K                             |     |
 
 
 > **DR 差距判断**：若自有站 DR 比竞品低 30+ 分，DR 匹配预检会过滤大量词，初始可执行词库会较小，需要在外链建设上更积极。
@@ -197,11 +198,18 @@
 > Day 0 SOP 不重复执行步骤。方法论以关键词研究 SOP 为准，此处只记录本步骤的输出目标。
 
 **本步骤产出（完成后需填入）：**
+竞品关键词映射
+https://www.birthchart.net/ ：
+https://docs.google.com/spreadsheets/d/1JPi0w8FInRYZYcEbbDmTBVkJJ69p1ZdgROhYHFSZjZM/edit?usp=sharing
+https://www.georgianicols.com/ ：
+https://docs.google.com/spreadsheets/d/1xrxRniv2GeZ4RpkeahktpP8kzyMNC5N_FEaexPHaAA0/edit?usp=sharing
+内容缺口
 
-| 产出项 | 数量目标 | 填入位置 |
-|-------|---------|---------|
-| 竞品映射词 | 50–200 条 | 关键词主表（来源：竞品映射）|
-| 内容缺口词 | 20–100 条 | 关键词主表（来源：内容缺口）|
+
+| 产出项    | 数量目标          | 填入位置                  |
+| ------ | ------------- | --------------------- |
+| 竞品映射词  | 50–200 条      | 关键词主表（来源：竞品映射）        |
+| 内容缺口词  | 20–100 条      | 关键词主表（来源：内容缺口）        |
 | 竞品基线指标 | 自有站 + 2-3 个竞品 | 模板 Section I → 竞品基线快照 |
 
 ---
