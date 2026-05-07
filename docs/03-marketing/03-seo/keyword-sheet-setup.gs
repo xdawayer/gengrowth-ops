@@ -35,9 +35,11 @@ function createGenGrowthKeywordSheet() {
     '意图词',     // I  公式自动检测
     'DR过滤',     // J  公式自动
     '分桶',       // K  公式自动 ← 核心输出
-    '内容状态',   // L  下拉菜单
-    '发布URL',    // M  手动（发布后填写）
-    '备注'        // N  手动
+    'SERP弱度',   // L  手动（✅弱 / ⚠️中 / ❌强 / 未查）Top10有弱站/论坛帖→✅弱
+    'AIO风险',    // M  手动（高 / 低 / 未查）Google出现AI Overview→高
+    '内容状态',   // N  下拉菜单
+    '发布URL',    // O  手动（发布后填写）
+    '备注'        // P  手动
   ];
 
   master.getRange(1, 1, 1, headers.length)
@@ -60,8 +62,22 @@ function createGenGrowthKeywordSheet() {
   // 策略覆盖勾选框
   master.getRange('H2:H500').insertCheckboxes();
 
-  // 内容状态下拉
+  // SERP弱度下拉（L列）
   master.getRange('L2:L500').setDataValidation(
+    SpreadsheetApp.newDataValidation()
+      .requireValueInList(['✅弱', '⚠️中', '❌强', '未查'], true)
+      .build()
+  );
+
+  // AIO风险下拉（M列）
+  master.getRange('M2:M500').setDataValidation(
+    SpreadsheetApp.newDataValidation()
+      .requireValueInList(['高', '低', '未查'], true)
+      .build()
+  );
+
+  // 内容状态下拉（N列）
+  master.getRange('N2:N500').setDataValidation(
     SpreadsheetApp.newDataValidation()
       .requireValueInList(['未开始', '写作中', '已发布', '暂缓'], true)
       .build()
@@ -116,8 +132,10 @@ function createGenGrowthKeywordSheet() {
   master.setColumnWidth(9, 65);   // 意图词
   master.setColumnWidth(10, 80);  // DR过滤
   master.setColumnWidth(11, 140); // 分桶
-  master.setColumnWidth(12, 90);  // 内容状态
-  master.setColumnWidth(13, 220); // 发布URL
+  master.setColumnWidth(12, 80);  // SERP弱度
+  master.setColumnWidth(13, 70);  // AIO风险
+  master.setColumnWidth(14, 90);  // 内容状态
+  master.setColumnWidth(15, 220); // 发布URL
 
   // 条件格式：分桶列着色
   var bucketRange = master.getRange('K2:K500');
@@ -141,6 +159,24 @@ function createGenGrowthKeywordSheet() {
         .build()
     );
   });
+
+  // SERP弱度列着色
+  var serpRange = master.getRange('L2:L500');
+  var serpColors = [
+    { text: '✅弱', bg: '#c8e6c9' },  // 绿：机会明确
+    { text: '⚠️中', bg: '#fff9c4' },  // 黄：可尝试
+    { text: '❌强', bg: '#ffcdd2' }   // 红：暂缓
+  ];
+  serpColors.forEach(function(r) {
+    rules.push(
+      SpreadsheetApp.newConditionalFormatRule()
+        .whenTextContains(r.text)
+        .setBackground(r.bg)
+        .setRanges([serpRange])
+        .build()
+    );
+  });
+
   master.setConditionalFormatRules(rules);
 
   // ────────────────────────────────────────────
@@ -148,7 +184,7 @@ function createGenGrowthKeywordSheet() {
   // ────────────────────────────────────────────
   var trendSh = ss.insertSheet('🚀趋势词');
   trendSh.getRange('A1').setFormula(
-    "=IFERROR(SORT(FILTER('关键词主表'!A2:N500,'关键词主表'!K2:K500=\"🚀趋势词\"),6,FALSE),{\"暂无趋势词\"})"
+    "=IFERROR(SORT(FILTER('关键词主表'!A2:P500,'关键词主表'!K2:K500=\"🚀趋势词\"),6,FALSE),{\"暂无趋势词\"})"
   );
   _styleViewSheet(trendSh, '#e8f5e9', '趋势词 — 按 Trends比值 降序排列，窗口紧迫，发现即执行');
 
@@ -157,7 +193,7 @@ function createGenGrowthKeywordSheet() {
   // ────────────────────────────────────────────
   var qwSh = ss.insertSheet('⚡快速胜利');
   qwSh.getRange('A1').setFormula(
-    "=IFERROR(SORT(FILTER('关键词主表'!A2:N500,REGEXMATCH('关键词主表'!K2:K500,\"快速胜利\")),3,FALSE),{\"暂无快速胜利词\"})"
+    "=IFERROR(SORT(FILTER('关键词主表'!A2:P500,REGEXMATCH('关键词主表'!K2:K500,\"快速胜利\")),3,FALSE),{\"暂无快速胜利词\"})"
   );
   _styleViewSheet(qwSh, '#fff9c4', '快速胜利词 — 按月搜索量降序，Week 1-4 主要执行');
 
@@ -166,7 +202,7 @@ function createGenGrowthKeywordSheet() {
   // ────────────────────────────────────────────
   var stratSh = ss.insertSheet('🎯战略词');
   stratSh.getRange('A1').setFormula(
-    "=IFERROR(SORT(FILTER('关键词主表'!A2:N500,'关键词主表'!K2:K500=\"🎯战略词\"),5,FALSE),{\"暂无战略词\"})"
+    "=IFERROR(SORT(FILTER('关键词主表'!A2:P500,'关键词主表'!K2:K500=\"🎯战略词\"),5,FALSE),{\"暂无战略词\"})"
   );
   _styleViewSheet(stratSh, '#e3f2fd', '战略词 — 按 CPC 降序，Week 3 起每周 1-2 篇');
 
@@ -175,7 +211,7 @@ function createGenGrowthKeywordSheet() {
   // ────────────────────────────────────────────
   var ltSh = ss.insertSheet('📌长尾词');
   ltSh.getRange('A1').setFormula(
-    "=IFERROR(FILTER('关键词主表'!A2:N500,'关键词主表'!K2:K500=\"📌长尾词\"),{\"暂无长尾词\"})"
+    "=IFERROR(FILTER('关键词主表'!A2:P500,'关键词主表'!K2:K500=\"📌长尾词\"),{\"暂无长尾词\"})"
   );
   _styleViewSheet(ltSh, '#fce4ec', '长尾/社区词 — 有余力时批量执行，注重主题集群');
 
@@ -188,7 +224,8 @@ function createGenGrowthKeywordSheet() {
     'KD', '月搜索量',
     '预期排名(W8)', '预期流量(W8)',
     '实际排名(W4)', '实际排名(W8)', '实际流量(W8)',
-    '偏差%', '备注'
+    '偏差%', '页面类型匹配', '备注'
+    // 页面类型匹配：发布前手动填写，例如"博客列表/how-to教程/比较页"，对齐Top3格式
   ];
   trackSh.getRange(1, 1, 1, trackHeaders.length)
     .setValues([trackHeaders])
