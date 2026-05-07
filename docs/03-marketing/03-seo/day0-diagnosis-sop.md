@@ -146,11 +146,11 @@ aliases:
 
 操作路径：GA4 → Reports → Acquisition → Traffic acquisition
 
-| 数据维度 | 填入模板字段 |
-|---------|------------|
-| 流量来源构成（organic / direct / social / referral） | 流量现状（各来源占比） |
-| Top 5 organic landing pages（engaged sessions 排序） | 内容资产盘点 |
-| Key events 基线（如注册、付费、CTA 点击） | 核心目标设定 |
+| 数据维度                                             | 填入模板字段      |
+| ------------------------------------------------ | ----------- |
+| 流量来源构成（organic / direct / social / referral）     | 流量现状（各来源占比） |
+| Top 5 organic landing pages（engaged sessions 排序） | 内容资产盘点      |
+| Key events 基线（如注册、付费、CTA 点击）                     | 核心目标设定      |
 
 ### 2.3 Ahrefs Domain Overview（自有站 + 竞品）
 
