@@ -198,11 +198,13 @@
 > Day 0 SOP 不重复执行步骤。方法论以关键词研究 SOP 为准，此处只记录本步骤的输出目标。
 
 **本步骤产出（完成后需填入）：**
-top pages
+**步骤 A — Top Pages 话题扫描**
 https://www.birthchart.net/ ：
 https://docs.google.com/spreadsheets/d/1JPi0w8FInRYZYcEbbDmTBVkJJ69p1ZdgROhYHFSZjZM/edit?usp=sharing
 https://www.georgianicols.com/ ：
 https://docs.google.com/spreadsheets/d/1xrxRniv2GeZ4RpkeahktpP8kzyMNC5N_FEaexPHaAA0/edit?usp=sharing
+**步骤 B — 关键词直接导出（仅限战术 / 基准竞品，DR 差距 ≤ 30）**
+
 内容缺口
 
 
