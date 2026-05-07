@@ -210,6 +210,10 @@ https://www.georgianicols.com/ ：
 https://docs.google.com/spreadsheets/d/1VWFT0b-D9GZ-ianAJ6D2nYops60qL_ACQLQ6H12lVG4/edit?usp=sharing
 
 ### 竞品关键词映射
+https://docs.google.com/spreadsheets/d/1qv2sGbgVSmoa_eiMtxqI41e-V90Mtcj53bXqwZTyPrM/edit?usp=sharing
+
+### 内容缺口分析
+
 
 
 
