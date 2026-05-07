@@ -208,7 +208,9 @@ www.birthchart.net/ ：
 https://docs.google.com/spreadsheets/d/11GoCovdNRk-JicFcbXTUIbqrgYa2DEBvO9gUDAzEPYA/edit?usp=sharing
 https://www.georgianicols.com/ ：
 https://docs.google.com/spreadsheets/d/1VWFT0b-D9GZ-ianAJ6D2nYops60qL_ACQLQ6H12lVG4/edit?usp=sharing
-内容缺口
+
+### 竞品关键词映射
+
 
 
 | 产出项    | 数量目标          | 填入位置                  |
