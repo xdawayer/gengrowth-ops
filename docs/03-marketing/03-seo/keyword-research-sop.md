@@ -124,11 +124,6 @@ aliases:
 2. 过滤条件：KD < 40，排名 1-20，月搜索量 > 100
 3. 去重合并，标注来源竞品
 
-**种子词设计原则（来自光年 SOP 方法论，适配英文 SEO）：**
-- 维度要多且广，不同维度之间是并列关系，不能存在包含关系
-- 恰好适配行业：不能过大（"marketing"），也不能过小（"marketing automation tool for React devs on macOS"）
-- 基于真实搜索行为，不要拼凑预设场景
-
 ---
 
 ### 来源 2：内容缺口分析
@@ -162,6 +157,10 @@ aliases:
 | 使用场景 | launch product, grow saas, app marketing    |
 | 竞品名称 | ahrefs alternative, jasper alternative      |
 
+**种子词设计原则（来自光年 SOP 方法论，适配英文 SEO）：**
+- 维度要多且广，不同维度之间是并列关系，不能存在包含关系
+- 恰好适配行业：不能过大（"marketing"），也不能过小（"marketing automation tool for React devs on macOS"）
+- 基于真实搜索行为，不要拼凑预设场景
 ---
 
 ### 来源 4：社区 / 问答挖掘
