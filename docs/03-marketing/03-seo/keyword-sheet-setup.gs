@@ -378,8 +378,8 @@ function createGenGrowthKeywordSheet() {
   // ── 四、人工调整说明 ──
   ruleSh.getRange(25, 1, 1, 4).setBackground('#f5f5f5').setFontStyle('italic');
   ruleSh.getRange('A25').setValue(
-    '四、人工调整分桶：N列选目标桶 → O列填调整原因 → P列自动更新为"桶名★"\n' +
-    'M列（分桶_自动）始终保留原始公式计算结果，供复盘时对比差异，判断是否需要调整分类规则本身。'
+    '四、人工调整分桶：P列选目标桶 → Q列填调整原因 → R列自动更新为"桶名★"\n' +
+    'O列（分桶_自动）始终保留原始公式计算结果，供复盘时对比差异，判断是否需要调整分类规则本身。'
   ).setWrap(true);
 
   // ── 列宽 & 行高 ──
