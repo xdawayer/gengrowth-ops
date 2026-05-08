@@ -293,27 +293,27 @@ function createGenGrowthKeywordSheet() {
   // ────────────────────────────────────────────
   var trendSh = ss.insertSheet('🚀趋势词');
   trendSh.getRange('A1').setFormula(
-    "=IF(COUNTIF('关键词主表'!P:P,\"*趋势词*\")>0,{'关键词主表'!A1:W1;SORT(FILTER('关键词主表'!A2:W500,REGEXMATCH('关键词主表'!P2:P500,\"趋势词\")),6,FALSE)},{\"暂无趋势词\"})"
+    "=IF(COUNTIF('关键词主表'!R:R,\"*趋势词*\")>0,{'关键词主表'!A1:X1;SORT(FILTER('关键词主表'!A2:X500,REGEXMATCH('关键词主表'!R2:R500,\"趋势词\")),6,FALSE)},{\"暂无趋势词\"})"
   );
   _styleViewSheet(trendSh, '#e8f5e9',
-    '趋势词 — Trends比值降序 | G1✅相关+G2=Y双门槛 | 发现即执行，不等周计划');
+    '趋势词 — Trends比值降序 | K列G1✅相关+L列G2=Y双门槛 | 发现即执行，不等周计划');
 
   // ────────────────────────────────────────────
-  // SHEET 3: ⚡快速胜利（按排序权重T列→月搜索量C列 降序）
+  // SHEET 3: ⚡快速胜利（按排序权重U列→月搜索量C列 降序）
   // ────────────────────────────────────────────
   var qwSh = ss.insertSheet('⚡快速胜利');
   qwSh.getRange('A1').setFormula(
-    "=IF(COUNTIF('关键词主表'!P:P,\"*快速胜利*\")>0,{'关键词主表'!A1:W1;SORT(FILTER('关键词主表'!A2:W500,REGEXMATCH('关键词主表'!P2:P500,\"快速胜利\")),{20,3},{FALSE,FALSE})},{\"暂无快速胜利词\"})"
+    "=IF(COUNTIF('关键词主表'!R:R,\"*快速胜利*\")>0,{'关键词主表'!A1:X1;SORT(FILTER('关键词主表'!A2:X500,REGEXMATCH('关键词主表'!R2:R500,\"快速胜利\")),{21,3},{FALSE,FALSE})},{\"暂无快速胜利词\"})"
   );
   _styleViewSheet(qwSh, '#fff9c4',
-    '快速胜利 — 排序权重（SERP弱度+意图）→ 月搜索量 降序 | Q列SERP弱度填完后排序才有意义 | Week1-4主执行');
+    '快速胜利 — 排序权重（H列SERP弱度+M列意图）→ 月搜索量 降序 | H列SERP弱度填完后排序才有意义 | Week1-4主执行');
 
   // ────────────────────────────────────────────
   // SHEET 4: 🎯战略词（按 CPC 降序，辅助参考）
   // ────────────────────────────────────────────
   var stratSh = ss.insertSheet('🎯战略词');
   stratSh.getRange('A1').setFormula(
-    "=IF(COUNTIF('关键词主表'!P:P,\"*战略词*\")>0,{'关键词主表'!A1:W1;SORT(FILTER('关键词主表'!A2:W500,REGEXMATCH('关键词主表'!P2:P500,\"战略词\")),5,FALSE)},{\"暂无战略词\"})"
+    "=IF(COUNTIF('关键词主表'!R:R,\"*战略词*\")>0,{'关键词主表'!A1:X1;SORT(FILTER('关键词主表'!A2:X500,REGEXMATCH('关键词主表'!R2:R500,\"战略词\")),5,FALSE)},{\"暂无战略词\"})"
   );
   _styleViewSheet(stratSh, '#e3f2fd',
     '战略词 — CPC降序（辅助参考，实际优先级以主题集群相关度人工排序为主）| Week3起每周1-2篇');
@@ -323,7 +323,7 @@ function createGenGrowthKeywordSheet() {
   // ────────────────────────────────────────────
   var ltSh = ss.insertSheet('📌长尾词');
   ltSh.getRange('A1').setFormula(
-    "=IF(COUNTIF('关键词主表'!P:P,\"*长尾词*\")>0,{'关键词主表'!A1:W1;FILTER('关键词主表'!A2:W500,REGEXMATCH('关键词主表'!P2:P500,\"长尾词\"))},{\"暂无长尾词\"})"
+    "=IF(COUNTIF('关键词主表'!R:R,\"*长尾词*\")>0,{'关键词主表'!A1:X1;FILTER('关键词主表'!A2:X500,REGEXMATCH('关键词主表'!R2:R500,\"长尾词\"))},{\"暂无长尾词\"})"
   );
   _styleViewSheet(ltSh, '#fce4ec',
     '长尾词 — 社区来源词验证搜索量后归入对应桶 | 50-100搜索量+意图明确→Week1并行 | 其余批量执行');
@@ -450,10 +450,10 @@ function createGenGrowthKeywordSheet() {
 function _styleViewSheet(sheet, color, note) {
   sheet.insertRowBefore(1);
   sheet.getRange('A1').setValue('⬆ 数据从第3行起自动填充 | ' + note);
-  sheet.getRange(1, 1, 1, 23)
+  sheet.getRange(1, 1, 1, 24)
     .setBackground(color).setFontStyle('italic').setFontColor('#555555');
-  // 第2行是公式输出的表头行（来自关键词主表!A1:W1），统一加深色样式
-  sheet.getRange(2, 1, 1, 23)
+  // 第2行是公式输出的表头行（来自关键词主表!A1:X1），统一加深色样式
+  sheet.getRange(2, 1, 1, 24)
     .setBackground('#37474f').setFontColor('#ffffff').setFontWeight('bold');
   sheet.setFrozenRows(2);
 }
