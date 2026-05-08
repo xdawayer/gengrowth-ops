@@ -4,11 +4,16 @@ title = "GenGrowth Ops Gitleaks Config"
 useDefault = true
 
 # 全局白名单：已知安全的路径
+# 本仓库是 ops wiki，正文几乎全是 markdown 笔记，里面会贴各种业务词、
+# 飞书/Lark 文档分享链接（含 view_token query 参数）等。这些不是真的
+# 密钥泄露，但会被宽泛的 token regex 命中。Secret Scan 真正要防的是
+# 代码文件（YAML/shell/JSON 等）里 hardcode 真实密钥，因此跳过 .md。
 [allowlist]
 description = "Global allowlist"
 paths = [
   '''onboarding/examples/.*''',
-  '''templates/.*'''
+  '''templates/.*''',
+  '''.*\.md$'''
 ]
 
 # API Key / Token
