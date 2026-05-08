@@ -7,35 +7,36 @@
  * 2. 粘贴本文件全部内容，替换默认代码
  * 3. 运行 createGenGrowthKeywordSheet
  * 4. 授权后自动创建新文件，链接打印在日志中
- * ⚠️  运行后请先在 ⚙️配置 表填写：你的站DR（B2）和 TOPIC_KEYWORDS（A7起）
+ * ⚠️  运行后请先在 ⚙️配置 表填写 TOPIC_KEYWORDS（A7起）
  *
  * 生成 9 个工作表：
  *   ⚙️配置 / 关键词主表 / 🚀趋势词 / ⚡快速胜利 / 🎯战略词 / 📌长尾词 / 📋分桶规则 / 📊内容追踪 / 📈来源分析
  *
- * 列结构（关键词主表，A–W 共 23 列）：
+ * 列结构（关键词主表，A–X 共 24 列）：
  *   A  关键词         手动
  *   B  来源           下拉
  *   C  月搜索量       手动（Ahrefs/SEMrush）
  *   D  KD             手动
  *   E  CPC($)         手动（辅助参考，不作分类主条件）
  *   F  Trends比值     手动（近3M均值÷近6M均值，留空=平稳）
- *   G  Top10平均DR    手动（目标词 SERP Top 10 平均DR，每词不同）
- *   H  DR差值         公式（G - 配置!你的站DR；正值=你比竞品弱）
- *   I  G1话题相关     公式（匹配配置!TOPIC_KEYWORDS，趋势词闸门1）
- *   J  G2可承接       下拉（Y/N，站内能承接该话题，趋势词闸门2）
- *   K  意图           公式（Commercial/Transactional/Problem-aware/Informational/待确认）
- *   L  DR过滤         公式（H>30→❌跳过，唯一真正的过滤关卡）
- *   M  分桶_自动      公式（四桶分类逻辑，不含人工干预）
- *   N  手动分桶       下拉（非空时覆盖M，P列显示桶名+"★"）
- *   O  调整原因       手动（记录人工调整依据，供复盘是否调整规则）
- *   P  分桶           公式（最终结果：N非空→N+"★"，否则=M）★=人工调整
- *   Q  SERP弱度       下拉（✅弱/⚠️中/❌强/未查）手动，快速胜利桶必填
- *   R  AIO预判        公式（搜索量≥500+定义型词→⚠️疑似高风险，供人工抽检参考）
- *   S  AIO风险        下拉（高/低/未查）人工无痕窗口确认后填写
- *   T  排序权重       公式（快速胜利桶内排序：SERP弱度+意图匹配）
- *   U  内容状态       下拉
- *   V  发布URL        手动
- *   W  备注           手动
+ *   G  Top10平均DR    手动（目标词 SERP Top10 平均DR，每词不同，查词时填写）
+ *   H  SERP弱度       下拉（✅弱/⚠️中/❌强/未查）查词时同步判断，快速胜利桶必填
+ *   I  自有站DR       手动（查词当时你的站DR快照，每词独立记录，不会被覆盖）
+ *   J  DR差值         公式（G - I；正值=竞争强于你；负值=你已超越，仍✅通过）
+ *   K  G1话题相关     公式（匹配配置!TOPIC_KEYWORDS，趋势词闸门1）
+ *   L  G2可承接       下拉（Y/N，站内能承接该话题，趋势词闸门2）
+ *   M  意图           公式（Commercial/Transactional/Problem-aware/Informational/待确认）
+ *   N  DR过滤         公式（J>30→❌跳过，唯一真正的过滤关卡）
+ *   O  分桶_自动      公式（四桶分类逻辑，不含人工干预）
+ *   P  手动分桶       下拉（非空时覆盖O，R列显示桶名+"★"）
+ *   Q  调整原因       手动（记录人工调整依据，供复盘是否调整规则）
+ *   R  分桶           公式（最终结果：P非空→P+"★"，否则=O）★=人工调整
+ *   S  AIO预判        公式（搜索量≥500+定义型词→⚠️疑似高风险，供人工抽检参考）
+ *   T  AIO风险        下拉（高/低/未查）人工无痕窗口确认后填写
+ *   U  排序权重       公式（快速胜利桶内排序：H列SERP弱度+M列意图）
+ *   V  内容状态       下拉
+ *   W  发布URL        手动
+ *   X  备注           手动
  */
 
 function createGenGrowthKeywordSheet() {
@@ -52,18 +53,10 @@ function createGenGrowthKeywordSheet() {
     .setValues([['配置项', '值']])
     .setBackground('#37474f').setFontColor('#ffffff').setFontWeight('bold');
 
-  configSh.getRange('A2:B4').setValues([
-    ['你的站 DR', 0],
+  configSh.getRange('A2:B3').setValues([
     ['客户产品名', ''],
     ['实验开始日期', '']
   ]);
-
-  // B2 黄色高亮，提示必填
-  configSh.getRange('B2').setBackground('#fff9c4');
-  configSh.getRange('A2').setNote(
-    '每次自有站DR提升后更新此值，关键词主表H列（DR差值）自动重算。\n' +
-    'DR差值 = Top10平均DR - 你的站DR；当差值从>30降到≤30，该词从❌跳过变为可执行。'
-  );
 
   configSh.getRange('A6').setValue('TOPIC_KEYWORDS（趋势词G1相关性检测，每行一个话题词）');
   configSh.getRange('A6').setFontWeight('bold').setBackground('#e8f5e9');
