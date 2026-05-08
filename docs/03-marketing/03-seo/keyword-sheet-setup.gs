@@ -9,8 +9,8 @@
  * 4. 授权后自动创建新文件，链接打印在日志中
  * ⚠️  运行后请先在 ⚙️配置 表填写：你的站DR（B2）和 TOPIC_KEYWORDS（A7起）
  *
- * 生成 8 个工作表：
- *   ⚙️配置 / 关键词主表 / 🚀趋势词 / ⚡快速胜利 / 🎯战略词 / 📌长尾词 / 📊内容追踪 / 📈来源分析
+ * 生成 9 个工作表：
+ *   ⚙️配置 / 关键词主表 / 🚀趋势词 / ⚡快速胜利 / 🎯战略词 / 📌长尾词 / 📋分桶规则 / 📊内容追踪 / 📈来源分析
  *
  * 列结构（关键词主表，A–W 共 23 列）：
  *   A  关键词         手动
@@ -116,21 +116,35 @@ function createGenGrowthKeywordSheet() {
 
   master.getRange(1, 1, 1, headers.length)
     .setValues([headers])
-    .setBackground('#1a237e').setFontColor('#ffffff').setFontWeight('bold').setFontSize(11);
+    .setFontColor('#ffffff').setFontWeight('bold').setFontSize(11);
+
+  // 三色表头区分列性质：深蓝=公式自动 / 深绿=必填手动 / 深灰=选填手动
+  var navyCols  = [8, 9, 11, 12, 13, 16, 18, 20]; // 公式/自动计算列
+  var greenCols = [1, 2, 3, 4, 7, 17];             // 必填手动列
+  var slateCols = [5, 6, 10, 14, 15, 19, 21, 22, 23]; // 选填手动列
+  navyCols.forEach(function(c)  { master.getRange(1, c).setBackground('#1a237e'); });
+  greenCols.forEach(function(c) { master.getRange(1, c).setBackground('#2e7d32'); });
+  slateCols.forEach(function(c) { master.getRange(1, c).setBackground('#455a64'); });
+
   master.setFrozenRows(1);
 
   // 列头说明（关键易错列）
   var notes = {
-    3:  'Top10平均DR：在 Ahrefs SERP Overview 查看目标词 Top10 平均DR，手动填写。\n注意：每个词不同，不是竞品DR，是这个词的SERP竞争强度。',
-    4:  'DR差值 = Top10平均DR（G）- 你的站DR（⚙️配置B2），自动计算。\n差值>30→❌跳过。更新配置表DR后此列自动重算，可直观看到更多词变得可执行。',
     5:  'CPC仅做参考展示，不用于分桶判断。战略词的主条件是意图（K列），不是CPC高低。',
+    6:  'Trends比值（手动，趋势词判断用）：近3个月均值 ÷ 近6个月均值。\n>1.2 = 近期搜索量明显上涨（趋势词候选）\n≈1.0 = 稳定平台期\n<0.8 = 衰退词，谨慎进入\n获取：Google Trends 或 Ahrefs "Trend"图表目测估算。留空视为平稳，不影响其他桶的分类，仅趋势词分桶条件使用。',
+    7:  'Top10平均DR：在 Ahrefs SERP Overview 查看目标词 Top10 平均DR，手动填写。\n注意：每个词不同，不是竞品DR，是这个词的SERP竞争强度。',
+    8:  'DR差值 = Top10平均DR（G）- 你的站DR（⚙️配置B2），自动计算。\n判断：差值>30→❌跳过；差值≤30（含负值）→✅通过\n负值（如-5）= 你的站DR已超越该词SERP均值，反而更应执行，属于正常情况。\n注：G列是首次查询时的快照，执行前如距填写超60天建议重新核查SERP。',
     9:  'G1话题相关：自动检测关键词是否命中⚙️配置!A7:A26的TOPIC_KEYWORDS列表。\n✅相关=话题相关；⚠️待确认=未命中，需人工判断后决定是否填J列=Y。\n初始化后必须先更新配置表话题词，否则默认示例词无意义。',
     10: 'G2可承接（手动）：站内是否有工具/内容/功能能承接该趋势词的用户需求？\n填Y才能进趋势桶；空值视为N。这是纯人工判断项，脚本无法自动识别。',
     11: '意图（自动，模式匹配，约80%准确）：\nCommercial: best/vs/alternative/review/pricing\nTransactional: buy/cost/free trial\nProblem-aware: fix/not working/error\nInformational: what is/how to/guide\n未命中→待确认，批量交Claude/GPT用SOP第四节prompt处理。',
+    12: 'DR过滤（公式，唯一真正的过滤关卡）：基于H列DR差值自动判断。\n✅通过：DR差值≤30，可执行\n❌跳过：DR差值>30，当前站DR不足以竞争该词\n待填：G列未填，无法计算\n❌跳过的词仍留在主表，不删除。你的站DR提升后，在⚙️配置更新B2，此列自动重算，跳过词可能变绿转为可执行。',
     13: '分桶_自动：系统按SOP规则计算的分桶结果（公式列，勿直接修改）。\n如需调整，在N列选目标桶，O列说明原因。M列始终保留自动判断结果供复盘参考。',
     14: '手动分桶：非空时覆盖自动分桶（M列），P列显示"桶名★"。\n用途：纠正误分类/强制品牌词进指定桶/试验性调整。\n所有手动调整必须在O列填写原因，复盘时判断是否调整分类规则。',
     15: '调整原因示例：\n"品牌词，强制快速胜利" / "CPC=0且无商业意图，误入战略词" / "试验：观察低KD定义词SERP弱度表现"',
+    16: '分桶（最终结果，只读公式列）：★=人工调整（N列非空），无★=自动分桶结果。\n⚠️ 请勿直接修改P列。如需调整：N列选目标桶→O列填原因→P列自动更新显示"桶名★"。\n各桶视图Sheet按此列筛选，是决定一个词"去哪里执行"的最终依据。',
+    17: 'SERP弱度（手动，⚡快速胜利桶必填）：无痕窗口搜索目标词，观察Top10页面质量。\n✅弱：Top10中≥3个页面DR低/内容薄弱/用户体验差，可超越\n⚠️中：Top10中有1-2个可超越位置\n❌强：Top10全部为高质量高DR站点\n填写后T列排序权重自动更新，⚡快速胜利视图排序才有实际意义。',
     18: 'AIO预判（自动）：搜索量≥500且含 what is/meaning/definition/how does/explained 时自动标注。\n仅供参考，须在S列用无痕窗口实际确认后填写最终结论。',
+    19: 'AIO风险（手动，R列标记⚠️疑似高风险词须优先确认）：无痕窗口搜索目标词，查看是否出现AI Overview框。\n高：搜索结果顶部有AI Overview摘要框（注意：须用无痕窗口，避免个性化影响）\n低：无AI Overview框\n未查：待确认\n高风险内容策略：避免纯定义型结构，改为操作型/对比型/案例型，增加原创视角和用户实际数据。',
     20: '排序权重（自动）：仅用于快速胜利桶视图排序。\nSERP弱度✅弱=3/⚠️中=2/❌强=1，Commercial或Problem-aware意图各+1分。\nQ列（SERP弱度）填完后排序才有实际意义。'
   };
   Object.keys(notes).forEach(function(col) {
@@ -266,7 +280,7 @@ function createGenGrowthKeywordSheet() {
 
   // N列（手动分桶）— 非空时黄色高亮，提示有人工覆盖
   rules.push(SpreadsheetApp.newConditionalFormatRule()
-    .whenCellNotEmpty().setBackground('#fff176').setFontWeight('bold')
+    .whenCellNotEmpty().setBackground('#fff176').setBold(true)
     .setRanges([master.getRange('N2:N500')]).build());
 
   // Q列（SERP弱度）
@@ -290,7 +304,7 @@ function createGenGrowthKeywordSheet() {
   // ────────────────────────────────────────────
   var trendSh = ss.insertSheet('🚀趋势词');
   trendSh.getRange('A1').setFormula(
-    "=IFERROR(SORT(FILTER('关键词主表'!A2:W500,REGEXMATCH('关键词主表'!P2:P500,\"趋势词\")),6,FALSE),{\"暂无趋势词\"})"
+    "=IF(COUNTIF('关键词主表'!P:P,\"*趋势词*\")>0,{'关键词主表'!A1:W1;SORT(FILTER('关键词主表'!A2:W500,REGEXMATCH('关键词主表'!P2:P500,\"趋势词\")),6,FALSE)},{\"暂无趋势词\"})"
   );
   _styleViewSheet(trendSh, '#e8f5e9',
     '趋势词 — Trends比值降序 | G1✅相关+G2=Y双门槛 | 发现即执行，不等周计划');
@@ -300,7 +314,7 @@ function createGenGrowthKeywordSheet() {
   // ────────────────────────────────────────────
   var qwSh = ss.insertSheet('⚡快速胜利');
   qwSh.getRange('A1').setFormula(
-    "=IFERROR(SORT(FILTER('关键词主表'!A2:W500,REGEXMATCH('关键词主表'!P2:P500,\"快速胜利\")),{20,3},{FALSE,FALSE}),{\"暂无快速胜利词\"})"
+    "=IF(COUNTIF('关键词主表'!P:P,\"*快速胜利*\")>0,{'关键词主表'!A1:W1;SORT(FILTER('关键词主表'!A2:W500,REGEXMATCH('关键词主表'!P2:P500,\"快速胜利\")),{20,3},{FALSE,FALSE})},{\"暂无快速胜利词\"})"
   );
   _styleViewSheet(qwSh, '#fff9c4',
     '快速胜利 — 排序权重（SERP弱度+意图）→ 月搜索量 降序 | Q列SERP弱度填完后排序才有意义 | Week1-4主执行');
@@ -310,7 +324,7 @@ function createGenGrowthKeywordSheet() {
   // ────────────────────────────────────────────
   var stratSh = ss.insertSheet('🎯战略词');
   stratSh.getRange('A1').setFormula(
-    "=IFERROR(SORT(FILTER('关键词主表'!A2:W500,REGEXMATCH('关键词主表'!P2:P500,\"战略词\")),5,FALSE),{\"暂无战略词\"})"
+    "=IF(COUNTIF('关键词主表'!P:P,\"*战略词*\")>0,{'关键词主表'!A1:W1;SORT(FILTER('关键词主表'!A2:W500,REGEXMATCH('关键词主表'!P2:P500,\"战略词\")),5,FALSE)},{\"暂无战略词\"})"
   );
   _styleViewSheet(stratSh, '#e3f2fd',
     '战略词 — CPC降序（辅助参考，实际优先级以主题集群相关度人工排序为主）| Week3起每周1-2篇');
@@ -320,13 +334,74 @@ function createGenGrowthKeywordSheet() {
   // ────────────────────────────────────────────
   var ltSh = ss.insertSheet('📌长尾词');
   ltSh.getRange('A1').setFormula(
-    "=IFERROR(FILTER('关键词主表'!A2:W500,REGEXMATCH('关键词主表'!P2:P500,\"长尾词\")),{\"暂无长尾词\"})"
+    "=IF(COUNTIF('关键词主表'!P:P,\"*长尾词*\")>0,{'关键词主表'!A1:W1;FILTER('关键词主表'!A2:W500,REGEXMATCH('关键词主表'!P2:P500,\"长尾词\"))},{\"暂无长尾词\"})"
   );
   _styleViewSheet(ltSh, '#fce4ec',
     '长尾词 — 社区来源词验证搜索量后归入对应桶 | 50-100搜索量+意图明确→Week1并行 | 其余批量执行');
 
   // ────────────────────────────────────────────
-  // SHEET 6: 📊内容追踪
+  // SHEET 6: 📋分桶规则
+  // ────────────────────────────────────────────
+  var ruleSh = ss.insertSheet('📋分桶规则');
+
+  // ── 标题行 ──
+  ruleSh.getRange(1, 1, 1, 4).setBackground('#1a237e').setFontColor('#ffffff')
+    .setFontWeight('bold').setFontSize(13);
+  ruleSh.getRange('A1').setValue('📋 分桶规则 & 操作参考');
+
+  // ── 一、前置关卡 ──
+  ruleSh.getRange(3, 1, 1, 4).setBackground('#e8eaf6');
+  ruleSh.getRange('A3').setValue('一、前置关卡（顺序操作，共两种性质：过滤 / 标注）').setFontWeight('bold');
+  ruleSh.getRange(4, 1, 1, 4).setValues([['关卡', '操作列', '判断条件', '性质说明']])
+    .setBackground('#3949ab').setFontColor('#ffffff').setFontWeight('bold');
+  ruleSh.getRange(5, 1, 3, 4).setValues([
+    ['第一关：DR过滤', 'L列（公式自动）', 'DR差值≤30 → ✅通过；>30 → ❌跳过\n负值 = 你的站DR超越竞争均值，仍为✅通过', '唯一真正的过滤关卡，❌跳过的词不进入分桶，但保留在主表'],
+    ['第二关：SERP弱度', 'Q列（手动填写）', '✅弱 / ⚠️中 / ❌强 / 未查', '标注，不过滤；⚡快速胜利桶必填；填写后T列排序权重自动更新'],
+    ['第三关：AIO风险', 'S列（手动填写）', '高 / 低 / 未查', '标注，不过滤；搜索量≥500的定义型词优先确认；影响内容结构策略']
+  ]).setVerticalAlignment('top').setWrap(true);
+
+  // ── 二、四桶分类规则 ──
+  ruleSh.getRange(9, 1, 1, 4).setBackground('#e8f5e9');
+  ruleSh.getRange('A9').setValue('二、四桶分类规则（M列公式按以下优先级依次判断，通过DR过滤后才进入分桶）').setFontWeight('bold');
+  ruleSh.getRange(10, 1, 1, 4).setValues([['优先级', '桶名', '分类条件', '桶内排序']])
+    .setBackground('#2e7d32').setFontColor('#ffffff').setFontWeight('bold');
+  ruleSh.getRange(11, 1, 5, 4).setValues([
+    ['① 最高', '❌ 跳过', 'DR差值>30（H列超标，L列=❌跳过）', '—'],
+    ['②', '🚀 趋势词', 'Trends比值>1.2  且  KD<35  且  G1=✅相关  且  G2=Y', 'Trends比值降序（F列）'],
+    ['③', '⚡ 快速胜利', '主规则：KD<20 且 搜索量≥100\n豁免规则：KD<20 且 意图=Problem-aware 或 Informational 且 搜索量≥50', 'SERP弱度权重(T列) → 搜索量 降序'],
+    ['④', '🎯 战略词', 'KD 20-50  且  意图=Commercial 或 Transactional', 'CPC降序（辅助参考，实际以主题集群相关度人工排序为主）'],
+    ['⑤ 兜底', '📌 长尾词', '其余所有通过DR过滤的词（含意图=待确认、搜索量低于阈值等未命中上述条件的词）', '—']
+  ]).setVerticalAlignment('top').setWrap(true);
+
+  // ── 三、意图自动分类规则 ──
+  ruleSh.getRange(17, 1, 1, 3).setBackground('#fff3e0');
+  ruleSh.getRange('A17').setValue('三、意图自动分类规则（K列公式，模式匹配，准确率约80%；未命中→待确认，需人工批量标注）').setFontWeight('bold');
+  ruleSh.getRange(18, 1, 1, 3).setValues([['意图类型', '触发词（含任意一个即判定为该类型）', '典型搜索场景']])
+    .setBackground('#e65100').setFontColor('#ffffff').setFontWeight('bold');
+  ruleSh.getRange(19, 1, 5, 3).setValues([
+    ['Commercial', 'best · vs · alternative · comparison · review · pricing · top', '比较选型，有决策意图但未直接购买'],
+    ['Transactional', 'buy · cost · cheap · discount · free trial · sign up', '直接购买或注册意图'],
+    ['Problem-aware', 'fix · not working · how to fix · how to solve · problem · error', '遇到问题，寻求解决方案'],
+    ['Informational', 'how to · what is · guide · tutorial · why · explained', '学习了解，暂无直接商业意图'],
+    ['待确认', '未命中以上任何模式', '批量粘贴到Claude/GPT，用《关键词研究SOP》第四节prompt批量标注意图']
+  ]).setVerticalAlignment('top').setWrap(true);
+
+  // ── 四、人工调整说明 ──
+  ruleSh.getRange(25, 1, 1, 4).setBackground('#f5f5f5').setFontStyle('italic');
+  ruleSh.getRange('A25').setValue(
+    '四、人工调整分桶：N列选目标桶 → O列填调整原因 → P列自动更新为"桶名★"\n' +
+    'M列（分桶_自动）始终保留原始公式计算结果，供复盘时对比差异，判断是否需要调整分类规则本身。'
+  ).setWrap(true);
+
+  // ── 列宽 & 行高 ──
+  [120, 120, 370, 230].forEach(function(w, i) { ruleSh.setColumnWidth(i + 1, w); });
+  [5, 6, 7, 11, 12, 13, 14, 15, 19, 20, 21, 22, 23].forEach(function(r) {
+    ruleSh.setRowHeight(r, 60);
+  });
+  ruleSh.setFrozenRows(1);
+
+  // ────────────────────────────────────────────
+  // SHEET 7: 📊内容追踪
   // ────────────────────────────────────────────
   var trackSh = ss.insertSheet('📊内容追踪');
   var tHeaders = [
@@ -358,7 +433,7 @@ function createGenGrowthKeywordSheet() {
   trackSh.setColumnWidth(4, 220);
 
   // ────────────────────────────────────────────
-  // SHEET 7: 📈来源分析
+  // SHEET 8: 📈来源分析
   // ────────────────────────────────────────────
   var srcSh = ss.insertSheet('📈来源分析');
   srcSh.getRange(1, 1, 1, 6)
@@ -382,11 +457,14 @@ function createGenGrowthKeywordSheet() {
   Logger.log('⚠️  请先在 ⚙️配置 表填写：你的站DR（B2）和 TOPIC_KEYWORDS（A7:A26）');
 }
 
-// ── 辅助：为桶视图添加说明行 ──
+// ── 辅助：为桶视图添加说明行 + 表头行 ──
 function _styleViewSheet(sheet, color, note) {
   sheet.insertRowBefore(1);
-  sheet.getRange('A1').setValue('⬆ 数据从第2行起自动填充 | ' + note);
-  sheet.getRange(1, 1, 1, 23)  // A1:W1，覆盖全部23列
+  sheet.getRange('A1').setValue('⬆ 数据从第3行起自动填充 | ' + note);
+  sheet.getRange(1, 1, 1, 23)
     .setBackground(color).setFontStyle('italic').setFontColor('#555555');
-  sheet.setFrozenRows(1);
+  // 第2行是公式输出的表头行（来自关键词主表!A1:W1），统一加深色样式
+  sheet.getRange(2, 1, 1, 23)
+    .setBackground('#37474f').setFontColor('#ffffff').setFontWeight('bold');
+  sheet.setFrozenRows(2);
 }
