@@ -344,27 +344,27 @@ function createGenGrowthKeywordSheet() {
   ruleSh.getRange(4, 1, 1, 4).setValues([['关卡', '操作列', '判断条件', '性质说明']])
     .setBackground('#3949ab').setFontColor('#ffffff').setFontWeight('bold');
   ruleSh.getRange(5, 1, 3, 4).setValues([
-    ['第一关：DR过滤', 'L列（公式自动）', 'DR差值≤30 → ✅通过；>30 → ❌跳过\n负值 = 你的站DR超越竞争均值，仍为✅通过', '唯一真正的过滤关卡，❌跳过的词不进入分桶，但保留在主表'],
-    ['第二关：SERP弱度', 'Q列（手动填写）', '✅弱 / ⚠️中 / ❌强 / 未查', '标注，不过滤；⚡快速胜利桶必填；填写后T列排序权重自动更新'],
-    ['第三关：AIO风险', 'S列（手动填写）', '高 / 低 / 未查', '标注，不过滤；搜索量≥500的定义型词优先确认；影响内容结构策略']
+    ['第一关：DR过滤', 'N列（公式自动）', 'DR差值≤30 → ✅通过；>30 → ❌跳过\n负值 = 你的站DR超越竞争均值，仍为✅通过', '唯一真正的过滤关卡，❌跳过的词不进入分桶，但保留在主表'],
+    ['第二关：SERP弱度', 'H列（手动填写）', '✅弱 / ⚠️中 / ❌强 / 未查', '标注，不过滤；⚡快速胜利桶必填；填写后U列排序权重自动更新'],
+    ['第三关：AIO风险', 'T列（手动填写）', '高 / 低 / 未查', '标注，不过滤；搜索量≥500的定义型词优先确认；影响内容结构策略']
   ]).setVerticalAlignment('top').setWrap(true);
 
   // ── 二、四桶分类规则 ──
   ruleSh.getRange(9, 1, 1, 4).setBackground('#e8f5e9');
-  ruleSh.getRange('A9').setValue('二、四桶分类规则（M列公式按以下优先级依次判断，通过DR过滤后才进入分桶）').setFontWeight('bold');
+  ruleSh.getRange('A9').setValue('二、四桶分类规则（O列公式按以下优先级依次判断，通过DR过滤后才进入分桶）').setFontWeight('bold');
   ruleSh.getRange(10, 1, 1, 4).setValues([['优先级', '桶名', '分类条件', '桶内排序']])
     .setBackground('#2e7d32').setFontColor('#ffffff').setFontWeight('bold');
   ruleSh.getRange(11, 1, 5, 4).setValues([
-    ['① 最高', '❌ 跳过', 'DR差值>30（H列超标，L列=❌跳过）', '—'],
-    ['②', '🚀 趋势词', 'Trends比值>1.2  且  KD<35  且  G1=✅相关  且  G2=Y', 'Trends比值降序（F列）'],
-    ['③', '⚡ 快速胜利', '主规则：KD<20 且 搜索量≥100\n豁免规则：KD<20 且 意图=Problem-aware 或 Informational 且 搜索量≥50', 'SERP弱度权重(T列) → 搜索量 降序'],
-    ['④', '🎯 战略词', 'KD 20-50  且  意图=Commercial 或 Transactional', 'CPC降序（辅助参考，实际以主题集群相关度人工排序为主）'],
+    ['① 最高', '❌ 跳过', 'DR差值>30（J列超标，N列=❌跳过）', '—'],
+    ['②', '🚀 趋势词', 'Trends比值>1.2  且  KD<35  且  K列G1=✅相关  且  L列G2=Y', 'Trends比值降序（F列）'],
+    ['③', '⚡ 快速胜利', '主规则：KD<20 且 搜索量≥100\n豁免规则：KD<20 且 M列意图=Problem-aware 或 Informational 且 搜索量≥50', 'H列SERP弱度权重(U列) → 搜索量 降序'],
+    ['④', '🎯 战略词', 'KD 20-50  且  M列意图=Commercial 或 Transactional', 'CPC降序（辅助参考，实际以主题集群相关度人工排序为主）'],
     ['⑤ 兜底', '📌 长尾词', '其余所有通过DR过滤的词（含意图=待确认、搜索量低于阈值等未命中上述条件的词）', '—']
   ]).setVerticalAlignment('top').setWrap(true);
 
   // ── 三、意图自动分类规则 ──
   ruleSh.getRange(17, 1, 1, 3).setBackground('#fff3e0');
-  ruleSh.getRange('A17').setValue('三、意图自动分类规则（K列公式，模式匹配，准确率约80%；未命中→待确认，需人工批量标注）').setFontWeight('bold');
+  ruleSh.getRange('A17').setValue('三、意图自动分类规则（M列公式，模式匹配，准确率约80%；未命中→待确认，需人工批量标注）').setFontWeight('bold');
   ruleSh.getRange(18, 1, 1, 3).setValues([['意图类型', '触发词（含任意一个即判定为该类型）', '典型搜索场景']])
     .setBackground('#e65100').setFontColor('#ffffff').setFontWeight('bold');
   ruleSh.getRange(19, 1, 5, 3).setValues([
