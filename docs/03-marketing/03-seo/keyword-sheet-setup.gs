@@ -58,19 +58,19 @@ function createGenGrowthKeywordSheet() {
     ['实验开始日期', '']
   ]);
 
-  configSh.getRange('A6').setValue('TOPIC_KEYWORDS（趋势词G1相关性检测，每行一个话题词）');
-  configSh.getRange('A6').setFontWeight('bold').setBackground('#e8f5e9');
+  configSh.getRange('A5').setValue('TOPIC_KEYWORDS（趋势词G1相关性检测，每行一个话题词）');
+  configSh.getRange('A5').setFontWeight('bold').setBackground('#e8f5e9');
 
   // 默认示例词（初始化后替换为实际产品话题）
   var defaultTopics = ['seo', 'marketing', 'growth', 'content', 'keyword'];
   for (var i = 0; i < defaultTopics.length; i++) {
-    configSh.getRange(7 + i, 1).setValue(defaultTopics[i]);
+    configSh.getRange(6 + i, 1).setValue(defaultTopics[i]);
   }
-  configSh.getRange('A7:A26').setBackground('#f9fbe7');
-  configSh.getRange('A7').setNote(
-    '替换为客户产品相关的核心话题词（英文），最多20行（A7:A26）。\n' +
+  configSh.getRange('A6:A25').setBackground('#f9fbe7');
+  configSh.getRange('A6').setNote(
+    '替换为客户产品相关的核心话题词（英文），最多20行（A6:A25）。\n' +
     '例 astrologywiki：astrology, birth chart, horoscope, natal chart, mercury retrograde\n' +
-    '命中TOPIC_KEYWORDS → G1话题相关=✅相关（趋势词闸门1通过）'
+    '命中TOPIC_KEYWORDS → K列G1话题相关=✅相关（趋势词闸门1通过）'
   );
 
   configSh.setColumnWidth(1, 320);
@@ -82,39 +82,40 @@ function createGenGrowthKeywordSheet() {
   var master = ss.insertSheet('关键词主表');
 
   var headers = [
-    '关键词',      // A
-    '来源',        // B
-    '月搜索量',    // C
-    'KD',          // D
-    'CPC($)',      // E
-    'Trends比值',  // F
-    'Top10平均DR', // G
-    'DR差值',      // H
-    'G1话题相关',  // I
-    'G2可承接',    // J
-    '意图',        // K
-    'DR过滤',      // L
-    '分桶_自动',   // M
-    '手动分桶',    // N
-    '调整原因',    // O
-    '分桶',        // P
-    'SERP弱度',    // Q
-    'AIO预判',     // R
-    'AIO风险',     // S
-    '排序权重',    // T
-    '内容状态',    // U
-    '发布URL',     // V
-    '备注'         // W
+    '关键词',         // A  1
+    '来源',           // B  2
+    '月搜索量',       // C  3
+    'KD',             // D  4
+    'CPC($)',         // E  5
+    'Trends比值',     // F  6
+    'Top10平均DR',    // G  7  ← 查词时手动填
+    'SERP弱度',       // H  8  ← 前移，查词同步判断（必填）
+    '自有站DR',       // I  9  ← 新增：查词当时站DR快照
+    'DR差值',         // J  10 ← 公式 G-I
+    'G1话题相关',     // K  11
+    'G2可承接',       // L  12
+    '意图',           // M  13
+    'DR过滤',         // N  14
+    '分桶_自动',      // O  15
+    '手动分桶',       // P  16
+    '调整原因',       // Q  17
+    '分桶',           // R  18
+    'AIO预判',        // S  19
+    'AIO风险',        // T  20
+    '排序权重',       // U  21
+    '内容状态',       // V  22
+    '发布URL',        // W  23
+    '备注'            // X  24
   ];
 
   master.getRange(1, 1, 1, headers.length)
     .setValues([headers])
     .setFontColor('#ffffff').setFontWeight('bold').setFontSize(11);
 
-  // 三色表头区分列性质：深蓝=公式自动 / 深绿=必填手动 / 深灰=选填手动
-  var navyCols  = [8, 9, 11, 12, 13, 16, 18, 20]; // 公式/自动计算列
-  var greenCols = [1, 2, 3, 4, 7, 17];             // 必填手动列
-  var slateCols = [5, 6, 10, 14, 15, 19, 21, 22, 23]; // 选填手动列
+  // 三色表头：深蓝=公式自动 / 深绿=必填手动 / 深灰=选填手动
+  var navyCols  = [10, 11, 13, 14, 15, 18, 19, 21]; // J K M N O R S U
+  var greenCols = [1, 2, 3, 4, 7, 8, 9];             // A B C D G H I
+  var slateCols = [5, 6, 12, 16, 17, 20, 22, 23, 24]; // E F L P Q T V W X
   navyCols.forEach(function(c)  { master.getRange(1, c).setBackground('#1a237e'); });
   greenCols.forEach(function(c) { master.getRange(1, c).setBackground('#2e7d32'); });
   slateCols.forEach(function(c) { master.getRange(1, c).setBackground('#455a64'); });
