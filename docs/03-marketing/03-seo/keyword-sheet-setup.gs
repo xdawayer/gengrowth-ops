@@ -150,28 +150,28 @@ function createGenGrowthKeywordSheet() {
   var dv = SpreadsheetApp.newDataValidation;
   master.getRange('B2:B500').setDataValidation(
     dv().requireValueInList(['竞品映射','内容缺口','种子词拓展','社区挖掘','趋势词','Social信号'], true).build());
-  master.getRange('J2:J500').setDataValidation(
-    dv().requireValueInList(['Y','N'], true).build());
-  master.getRange('N2:N500').setDataValidation(
-    dv().requireValueInList(['🚀趋势词','⚡快速胜利','🎯战略词','📌长尾词','❌跳过'], true).build());
-  master.getRange('Q2:Q500').setDataValidation(
+  master.getRange('H2:H500').setDataValidation(  // H: SERP弱度
     dv().requireValueInList(['✅弱','⚠️中','❌强','未查'], true).build());
-  master.getRange('S2:S500').setDataValidation(
+  master.getRange('L2:L500').setDataValidation(  // L: G2可承接
+    dv().requireValueInList(['Y','N'], true).build());
+  master.getRange('P2:P500').setDataValidation(  // P: 手动分桶
+    dv().requireValueInList(['🚀趋势词','⚡快速胜利','🎯战略词','📌长尾词','❌跳过'], true).build());
+  master.getRange('T2:T500').setDataValidation(  // T: AIO风险
     dv().requireValueInList(['高','低','未查'], true).build());
-  master.getRange('U2:U500').setDataValidation(
+  master.getRange('V2:V500').setDataValidation(  // V: 内容状态
     dv().requireValueInList(['未开始','写作中','已发布','暂缓'], true).build());
 
   // ── 公式 ──
 
-  // H: DR差值
-  var fH = '=IF(G2="","",IF(' + CFG + '!$B$2="","配置DR未填",G2-' + CFG + '!$B$2))';
+  // J: DR差值（G - I，两者均为查词时快照）
+  var fJ = '=IF(OR(G2="",I2=""),"待填",G2-I2)';
 
-  // I: G1话题相关（检测关键词是否命中TOPIC_KEYWORDS列表中任意词）
-  var fI = '=IF(A2="","",IF(SUMPRODUCT(--(ISNUMBER(SEARCH(' +
-    'IFERROR(' + CFG + '!$A$7:$A$26,""),A2))))>0,"✅相关","⚠️待确认"))';
+  // K: G1话题相关（检测关键词是否命中TOPIC_KEYWORDS列表中任意词）
+  var fK = '=IF(A2="","",IF(SUMPRODUCT(--(ISNUMBER(SEARCH(' +
+    'IFERROR(' + CFG + '!$A$6:$A$25,""),A2))))>0,"✅相关","⚠️待确认"))';
 
-  // K: 意图（模式匹配，按Commercial>Transactional>Problem-aware>Informational>待确认优先级）
-  var fK =
+  // M: 意图（模式匹配，按Commercial>Transactional>Problem-aware>Informational>待确认优先级）
+  var fM =
     '=IF(A2="","",IF(OR(' +
       'ISNUMBER(SEARCH("best ",A2)),ISNUMBER(SEARCH(" vs ",A2)),' +
       'ISNUMBER(SEARCH("alternative",A2)),ISNUMBER(SEARCH("comparison",A2)),' +
@@ -191,106 +191,100 @@ function createGenGrowthKeywordSheet() {
       'ISNUMBER(SEARCH("why ",A2)),ISNUMBER(SEARCH("explained",A2))),"Informational",' +
     '"待确认")))))';
 
-  // L: DR过滤（唯一真正的过滤关卡，不通过则跳过）
-  var fL = '=IF(H2="","待填",IF(ISNUMBER(H2),IF(H2>30,"❌跳过","✅通过"),"待填"))';
+  // N: DR过滤（唯一真正的过滤关卡，基于J列DR差值）
+  var fN = '=IF(J2="待填","待填",IF(ISNUMBER(J2),IF(J2>30,"❌跳过","✅通过"),"待填"))';
 
-  // M: 分桶_自动（四桶核心逻辑）
-  // 优先级：❌跳过 > 🚀趋势词 > ⚡快速胜利 > 🎯战略词 > 📌长尾词
-  var fM =
+  // O: 分桶_自动（四桶核心逻辑，优先级：❌跳过>🚀趋势词>⚡快速胜利>🎯战略词>📌长尾词）
+  var fO =
     '=IF(A2="","",' +
-    'IF(L2="❌跳过","❌跳过",' +
-    // 趋势词：Trends>1.2, KD<35, G1话题相关, G2可承接=Y
-    'IF(AND(ISNUMBER(F2),F2>1.2,ISNUMBER(D2),D2<35,I2="✅相关",J2="Y"),"🚀趋势词",' +
-    // 快速胜利（主规则）：KD<20, 搜索量≥100
+    'IF(N2="❌跳过","❌跳过",' +
+    'IF(AND(ISNUMBER(F2),F2>1.2,ISNUMBER(D2),D2<35,K2="✅相关",L2="Y"),"🚀趋势词",' +
     'IF(AND(ISNUMBER(D2),D2<20,ISNUMBER(C2),C2>=100),"⚡快速胜利",' +
-    // 快速胜利（how-to豁免）：Problem-aware或Informational+KD<20+搜索量≥50
-    'IF(AND(ISNUMBER(D2),D2<20,OR(K2="Problem-aware",K2="Informational"),ISNUMBER(C2),C2>=50),"⚡快速胜利",' +
-    // 战略词：Commercial/Transactional意图, KD 20-50
-    'IF(AND(ISNUMBER(D2),D2>=20,D2<=50,OR(K2="Commercial",K2="Transactional")),"🎯战略词",' +
-    // 其余：长尾词
+    'IF(AND(ISNUMBER(D2),D2<20,OR(M2="Problem-aware",M2="Informational"),ISNUMBER(C2),C2>=50),"⚡快速胜利",' +
+    'IF(AND(ISNUMBER(D2),D2>=20,D2<=50,OR(M2="Commercial",M2="Transactional")),"🎯战略词",' +
     '"📌长尾词"))))))';
 
-  // P: 分桶（最终：N非空→人工调整，加★标识；否则=自动结果）
-  var fP = '=IF(A2="","",IF(N2<>"",N2&"★",M2))';
+  // R: 分桶（最终：P非空→人工调整加★；否则=自动结果）
+  var fR = '=IF(A2="","",IF(P2<>"",P2&"★",O2))';
 
-  // R: AIO预判（搜索量≥500且含定义型词→疑似高风险）
-  var fR =
+  // S: AIO预判（搜索量≥500且含定义型词→疑似高风险）
+  var fS =
     '=IF(A2="","",IF(AND(ISNUMBER(C2),C2>=500,OR(' +
       'ISNUMBER(SEARCH("what is",A2)),ISNUMBER(SEARCH("meaning",A2)),' +
       'ISNUMBER(SEARCH("definition",A2)),ISNUMBER(SEARCH("how does",A2)),' +
       'ISNUMBER(SEARCH("explained",A2)))),"⚠️疑似高风险",""))';
 
-  // T: 排序权重（SERP弱度+意图匹配，供快速胜利桶视图排序）
-  var fT =
+  // U: 排序权重（H列SERP弱度+M列意图，供快速胜利桶视图排序）
+  var fU =
     '=IF(A2="",0,' +
-    'IF(Q2="✅弱",3,IF(Q2="⚠️中",2,1))' +
-    '+IF(OR(K2="Commercial",K2="Problem-aware"),1,0))';
+    'IF(H2="✅弱",3,IF(H2="⚠️中",2,1))' +
+    '+IF(OR(M2="Commercial",M2="Problem-aware"),1,0))';
 
   // 应用公式
-  master.getRange('H2').setFormula(fH);
-  master.getRange('I2').setFormula(fI);
+  master.getRange('J2').setFormula(fJ);
   master.getRange('K2').setFormula(fK);
-  master.getRange('L2').setFormula(fL);
   master.getRange('M2').setFormula(fM);
-  master.getRange('P2').setFormula(fP);
+  master.getRange('N2').setFormula(fN);
+  master.getRange('O2').setFormula(fO);
   master.getRange('R2').setFormula(fR);
-  master.getRange('T2').setFormula(fT);
+  master.getRange('S2').setFormula(fS);
+  master.getRange('U2').setFormula(fU);
 
   // 向下复制（仅公式列）
-  master.getRange('H2:M2').copyTo(master.getRange('H3:M500'));
-  master.getRange('P2').copyTo(master.getRange('P3:P500'));
+  master.getRange('J2:O2').copyTo(master.getRange('J3:O500'));
   master.getRange('R2').copyTo(master.getRange('R3:R500'));
-  master.getRange('T2').copyTo(master.getRange('T3:T500'));
+  master.getRange('S2').copyTo(master.getRange('S3:S500'));
+  master.getRange('U2').copyTo(master.getRange('U3:U500'));
 
-  // 列宽（A-W 共 23 列）
-  [270,100,90,55,65,90,100,80,100,70,110,70,120,110,200,120,80,110,70,80,90,220,120]
+  // 列宽（A-X 共 24 列）
+  [270,100,90,55,65,90,100,80,80,80,100,70,110,70,120,110,200,120,110,70,80,90,220,120]
     .forEach(function(w, i) { master.setColumnWidth(i + 1, w); });
 
   // ── 条件格式 ──
   var rules = [];
 
-  // P列（分桶，最终结果）— 主色彩标识
-  var pR = master.getRange('P2:P500');
+  // R列（分桶，最终结果）— 主色彩标识
+  var rR = master.getRange('R2:R500');
   [
     { t: '🚀趋势词',    bg: '#c8e6c9' },
-    { t: '⚡快速胜利★', bg: '#fff59d' }, // 人工调整版，深黄区分
+    { t: '⚡快速胜利★', bg: '#fff59d' },
     { t: '⚡快速胜利',  bg: '#fff9c4' },
     { t: '🎯战略词',    bg: '#bbdefb' },
     { t: '📌长尾词',    bg: '#fce4ec' },
     { t: '❌跳过',      bg: '#eeeeee' }
   ].forEach(function(r) {
     rules.push(SpreadsheetApp.newConditionalFormatRule()
-      .whenTextContains(r.t).setBackground(r.bg).setRanges([pR]).build());
+      .whenTextContains(r.t).setBackground(r.bg).setRanges([rR]).build());
   });
 
-  // M列（分桶_自动）— 浅色，与P列区分
-  var mR = master.getRange('M2:M500');
+  // O列（分桶_自动）— 浅色，与R列区分
+  var oR = master.getRange('O2:O500');
   [
     { t: '🚀', bg: '#f1f8e9' }, { t: '⚡', bg: '#fffde7' },
     { t: '🎯', bg: '#e8f4fd' }, { t: '📌', bg: '#fdf2f8' }
   ].forEach(function(r) {
     rules.push(SpreadsheetApp.newConditionalFormatRule()
-      .whenTextContains(r.t).setBackground(r.bg).setRanges([mR]).build());
+      .whenTextContains(r.t).setBackground(r.bg).setRanges([oR]).build());
   });
 
-  // N列（手动分桶）— 非空时黄色高亮，提示有人工覆盖
+  // P列（手动分桶）— 非空时黄色高亮
   rules.push(SpreadsheetApp.newConditionalFormatRule()
     .whenCellNotEmpty().setBackground('#fff176').setBold(true)
-    .setRanges([master.getRange('N2:N500')]).build());
+    .setRanges([master.getRange('P2:P500')]).build());
 
-  // Q列（SERP弱度）
-  var qR = master.getRange('Q2:Q500');
+  // H列（SERP弱度）
+  var hR = master.getRange('H2:H500');
   [
     { t: '✅弱', bg: '#c8e6c9' }, { t: '⚠️中', bg: '#fff9c4' }, { t: '❌强', bg: '#ffcdd2' }
   ].forEach(function(r) {
     rules.push(SpreadsheetApp.newConditionalFormatRule()
-      .whenTextContains(r.t).setBackground(r.bg).setRanges([qR]).build());
+      .whenTextContains(r.t).setBackground(r.bg).setRanges([hR]).build());
   });
 
-  // R列（AIO预判）— 橙色警示
+  // S列（AIO预判）— 橙色警示
   rules.push(SpreadsheetApp.newConditionalFormatRule()
     .whenTextContains('疑似高风险').setBackground('#ffe0b2')
-    .setRanges([master.getRange('R2:R500')]).build());
+    .setRanges([master.getRange('S2:S500')]).build());
 
   master.setConditionalFormatRules(rules);
 
