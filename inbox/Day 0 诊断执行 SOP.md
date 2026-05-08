@@ -237,6 +237,8 @@ https://docs.google.com/spreadsheets/d/1DGcV5OSE2Wt0N4gnl5dlfV-3_WCQhhack0-EkNW9
 > Day 0 SOP 不重复执行步骤。方法论以关键词研究 SOP 为准，此处只记录本步骤的输出目标。
 
 **本步骤产出（完成后需填入关键词主表）：**
+种子词拓展
+
 
 | 产出项 | 数量目标 | 来源字段标注 |
 |-------|---------|-----------|
