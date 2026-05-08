@@ -1,7 +1,7 @@
 ---
 title: 关键词研究 SOP（六源挖掘 → 四桶分级）
 date: 2026-04-29
-updated: 2026-04-29
+updated: 2026-05-08
 type: sop
 author: Lynne
 tags:
