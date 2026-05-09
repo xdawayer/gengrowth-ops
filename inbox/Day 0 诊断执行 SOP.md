@@ -212,6 +212,7 @@ https://docs.google.com/spreadsheets/d/1dM9oIHvBKTs7ZZwCUgQZ88WTtDQZBotGB371pp4W
 https://astrologyayurveda.com
 https://docs.google.com/spreadsheets/d/1MEg_mfhmj7_r6lBWcrAhX1Ea_lTFBI4j-t7xJnHEteg/edit?usp=sharing
 ### 竞品关键词映射
+https://docs.google.com/spreadsheets/d/1ItVgeIPkGfXBn-hIWmPZ8ei76-eCv3Zm0e8GRwJhI9Y/edit?usp=sharing
 
 ### 内容缺口分析
 
