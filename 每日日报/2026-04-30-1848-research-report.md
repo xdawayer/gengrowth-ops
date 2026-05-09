@@ -16,9 +16,9 @@ topics:
   - "seo"
   - "ai-seo"
 entities:
-  people:
-  companies:
-  products:
+  people: []
+  companies: []
+  products: []
 tags:
   - "daily-digest"
   - "research-report"

@@ -15,7 +15,7 @@ topics:
   - "workflow-design"
   - "shared-memory"
 entities:
-  people:
+  people: []
   companies:
     - "Anthropic"
   products:
