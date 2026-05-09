@@ -206,7 +206,11 @@ https://astrologyayurveda.com
 https://docs.google.com/spreadsheets/d/1MxtMO-lQHJkHHqFKRqozMuBaK_oyuOSvjQB5LWgO8KY/edit?usp=sharing
 
 **步骤 B — 关键词直接导出（仅限战术 / 基准竞品，DR 差距 ≤ 30）**
+www.saturnandhoney.com/
+https://docs.google.com/spreadsheets/d/1dM9oIHvBKTs7ZZwCUgQZ88WTtDQZBotGB371pp4WFec/edit?usp=sharing
 
+https://astrologyayurveda.com
+https://docs.google.com/spreadsheets/d/1MEg_mfhmj7_r6lBWcrAhX1Ea_lTFBI4j-t7xJnHEteg/edit?usp=sharing
 ### 竞品关键词映射
 
 ### 内容缺口分析
