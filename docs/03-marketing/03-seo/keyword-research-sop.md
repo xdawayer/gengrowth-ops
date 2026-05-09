@@ -30,18 +30,17 @@ aliases:
 - **目标地区**：英文谷歌生态（Ahrefs / DataForSEO / GSC 工具链）
 - **获客方式**：以 SEO 为主，配合社媒"双轨"协同（Track A 内容 + Track B 社交信号）
 
-### 本 SOP **不**适合的场景，请切换到对应 SOP
+### 本 SOP **不**适合的场景
 
-| 你的场景                   | 切换到                                       |
-| ---------------------- | ----------------------------------------- |
-| 老站 / DR > 50 / 需要刷新与修剪 | `keyword-research-sop-mature-site.md`（待建） |
-| 电商 / 产品页与类目页分层         | `keyword-research-sop-ecommerce.md`（待建）   |
-| 本地 SEO / 多门店服务业        | `keyword-research-sop-local.md`（待建）       |
-| 中文站 / 百度 / 知乎 / 小红书    | `keyword-research-sop-chinese.md`（待建）     |
-| GEO / AEO（AI 搜索引用优化）   | 见本文「八、GEO/AEO 引用优化」章节                     |
-| 跨业务、跨阶段的总路由            | `../keyword-research-overview.md`（路由总览）   |
+以下场景不在本 SOP 覆盖范围内，请先到 `../keyword-research-overview.md`（路由总览）按决策维度判断：
 
-> 不确定属于哪一类时，先看 `../keyword-research-overview.md` 的全景图与决策维度。
+- 老站 / DR > 50 / 需要刷新与修剪
+- 电商 / 产品页与类目页分层
+- 本地 SEO / 多门店服务业
+- 中文站 / 百度 / 知乎 / 小红书
+- 付费投放 / 社媒营销 / 合作分销
+
+> GEO / AEO（AI 搜索引用优化）已在本文第八章嵌入初版方法论，无需切换。
 
 ---
 
