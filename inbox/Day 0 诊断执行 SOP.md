@@ -88,8 +88,7 @@
    - 对 GenGrowth 初始列表里的每个竞品，快速查 Ahrefs 确认 DR
    - 标注对标用途：**DR 差距 ≤ 30 → 可关键词对标**；**DR 差距 > 30 → 仅做话题发现**
    - 如果所有竞品 DR 差距都 > 30 → 在 Google 搜索 3 个核心词，从 Top 10 里找 DR 较低的站补入
- https://www.georgianicols.com/ DR27
- https://www.galacticcenter.org/ DR26
+https://astrologyayurveda.com/ DR25
  https://www.birthchart.net/ DR28
  www.saturnandhoney.com/ DR23
    - 输出：每个竞品标注"关键词对标 / 话题发现"，Step 2.3 和 Step 3 按此区分使用
@@ -159,12 +158,12 @@
 
 > 快速判断：查候选词的 SERP Top 10 平均 DR。有 2 个以上 DR < 你的站 → 可执行；平均 DR > 你的站 + 30 → 跳过。
 
-| 指标                | 自有站 <br>www.astrologywiki.com | 竞品 A www.saturnandhoney.com/ | 竞品 B www.nextastrology.com/ | 差距  |
-| ----------------- | ----------------------------- | ---------------------------- | --------------------------- | --- |
-| DR（Domain Rating） | 0                             | 23                           | 12                          |     |
-| 引用域名数             | 49                            | 142                          | 1.8K                        |     |
-| 估算月均自然流量          | 0                             | 15.1K                        | 120K                        |     |
-| 排名关键词数            | 0                             | 1.3K                         | 2.2K                        |     |
+| 指标                | 自有站 <br>www.astrologywiki.com | 竞品 A www.saturnandhoney.com/ | 竞品 B https://astrologyayurveda.com | 差距  |
+| ----------------- | ----------------------------- | ---------------------------- | ---------------------------------- | --- |
+| DR（Domain Rating） | 0                             | 23                           | 25                                 |     |
+| 引用域名数             | 49                            | 142                          | 160                                |     |
+| 估算月均自然流量          | 0                             | 15.1K                        | 48.9K                              |     |
+| 排名关键词数            | 0                             | 641                          | 539                                |     |
 
 
 > **DR 差距判断**：若自有站 DR 比竞品低 30+ 分，DR 匹配预检会过滤大量词，初始可执行词库会较小，需要在外链建设上更积极。
@@ -200,22 +199,18 @@
 
 **本步骤产出（完成后需填入）：**
 **步骤 A — Top Pages 话题扫描**
-https://www.birthchart.net/ ：
-https://docs.google.com/spreadsheets/d/1JPi0w8FInRYZYcEbbDmTBVkJJ69p1ZdgROhYHFSZjZM/edit?usp=sharing
-https://www.georgianicols.com/ ：
-https://docs.google.com/spreadsheets/d/1xrxRniv2GeZ4RpkeahktpP8kzyMNC5N_FEaexPHaAA0/edit?usp=sharing
+www.saturnandhoney.com/
+https://docs.google.com/spreadsheets/d/1oztuhHr4WuyAIqHXZJSPIChc0iMnS7R7vQbCCvOVIKY/edit?usp=sharing
+
+https://astrologyayurveda.com
+https://docs.google.com/spreadsheets/d/1MxtMO-lQHJkHHqFKRqozMuBaK_oyuOSvjQB5LWgO8KY/edit?usp=sharing
+
 **步骤 B — 关键词直接导出（仅限战术 / 基准竞品，DR 差距 ≤ 30）**
-www.birthchart.net/ ：
-https://docs.google.com/spreadsheets/d/11GoCovdNRk-JicFcbXTUIbqrgYa2DEBvO9gUDAzEPYA/edit?usp=sharing
-https://www.georgianicols.com/ ：
-https://docs.google.com/spreadsheets/d/1VWFT0b-D9GZ-ianAJ6D2nYops60qL_ACQLQ6H12lVG4/edit?usp=sharing
 
 ### 竞品关键词映射
-https://docs.google.com/spreadsheets/d/1qv2sGbgVSmoa_eiMtxqI41e-V90Mtcj53bXqwZTyPrM/edit?usp=sharing
 
 ### 内容缺口分析
 
-https://docs.google.com/spreadsheets/d/1DGcV5OSE2Wt0N4gnl5dlfV-3_WCQhhack0-EkNW9CFc/edit?usp=sharing
 
 
 | 产出项    | 数量目标          | 填入位置                  |
