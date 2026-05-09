@@ -91,6 +91,7 @@
  https://www.georgianicols.com/ DR27
  https://www.galacticcenter.org/ DR26
  https://www.birthchart.net/ DR28
+ www.saturnandhoney.com/ DR23
    - 输出：每个竞品标注"关键词对标 / 话题发现"，Step 2.3 和 Step 3 按此区分使用
 
 > 竞品选择详细策略参照《关键词研究 SOP》零节。
@@ -158,12 +159,12 @@
 
 > 快速判断：查候选词的 SERP Top 10 平均 DR。有 2 个以上 DR < 你的站 → 可执行；平均 DR > 你的站 + 30 → 跳过。
 
-| 指标                | 自有站 <br>www.astrologywiki.com | 竞品 A <br>https://www.georgianicols.com/ | 竞品 B https://www.birthchart.net/ | 差距  |
-| ----------------- | ----------------------------- | --------------------------------------- | -------------------------------- | --- |
-| DR（Domain Rating） | 0                             | 27                                      | 28                               |     |
-| 引用域名数             | 49                            | 625                                     | 2.7K                             |     |
-| 估算月均自然流量          | 0                             | 229K                                    | 173K                             |     |
-| 排名关键词数            | 0                             | 486                                     | 1.3K                             |     |
+| 指标                | 自有站 <br>www.astrologywiki.com | 竞品 A www.saturnandhoney.com/ | 竞品 B https://www.birthchart.net/ | 差距  |
+| ----------------- | ----------------------------- | ---------------------------- | -------------------------------- | --- |
+| DR（Domain Rating） | 0                             | 23                           | 28                               |     |
+| 引用域名数             | 49                            | 142                          | 2.7K                             |     |
+| 估算月均自然流量          | 0                             | 15.1K                        | 173K                             |     |
+| 排名关键词数            | 0                             | 1.3K                         | 1.3K                             |     |
 
 
 > **DR 差距判断**：若自有站 DR 比竞品低 30+ 分，DR 匹配预检会过滤大量词，初始可执行词库会较小，需要在外链建设上更积极。
