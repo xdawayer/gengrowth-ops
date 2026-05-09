@@ -1,18 +1,51 @@
 ---
 title: "GenGrowth 情报｜2026-05-07"
 date: 2026-05-07-1121
+updated: 2026-05-09
 type: daily-digest
 source: slack
 channel: gengrowth-intel
 channel_id: C0B21PTGE8L
 slack_ts: "1778124101.692919"
 session: intel
+status: captured
+topics:
+  - "gengrowth-intel"
+  - "agent-workflow"
+  - "content-strategy"
+  - "growth-opportunity"
+  - "ai-coding"
+  - "shared-memory"
+  - "agent-platform"
+entities:
+  people:
+    - "Peter Steinberger"
+    - "Garry Tan"
+    - "Aaron Levie"
+    - "Guillermo Rauch"
+  companies:
+    - "Anthropic"
+    - "Vercel"
+    - "Box"
+  products:
+    - "Claude Code"
+    - "OpenClaw"
+    - "GBrain"
+    - "Crabbox"
+    - "Claude"
 tags:
-  - daily-digest
-  - gengrowth-intel
-  - slack-sync
+  - "daily-digest"
+  - "gengrowth-intel"
+  - "slack-sync"
+  - "growth-intelligence"
+related:
+  - "[[GenGrowth Intel]]"
+  - "[[Agent Workflow]]"
+  - "[[Content Strategy]]"
+  - "[[Growth Opportunity]]"
 aliases:
   - "2026-05-07 GenGrowth 情报｜2026-05-07"
+summary: "同步自 Slack 的GenGrowth 情报｜2026-05-07，用于 GenGrowth 本地知识库检索、主题聚合和后续 gbrain/wiki 关联。"
 ---
 
 # GenGrowth 情报｜2026-05-07

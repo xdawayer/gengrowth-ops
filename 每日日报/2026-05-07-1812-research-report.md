@@ -1,18 +1,37 @@
 ---
 title: "今天读什么｜Anthropic：如何构建有效的 AI Agent"
 date: 2026-05-07-1812
+updated: 2026-05-09
 type: daily-digest
 source: slack
 channel: gengrowth-research-reports
 channel_id: C0AKT2PQLMN
 slack_ts: "1778148771.896369"
 session: learning
+status: captured
+topics:
+  - "ai-learning"
+  - "agent-workflow"
+  - "workflow-design"
+  - "shared-memory"
+entities:
+  people:
+  companies:
+    - "Anthropic"
+  products:
+    - "GBrain"
 tags:
-  - daily-digest
-  - research-report
-  - slack-sync
+  - "daily-digest"
+  - "research-report"
+  - "slack-sync"
+  - "learning-note"
+related:
+  - "[[AI 深度学习]]"
+  - "[[Agent Workflow]]"
+  - "[[Workflow Design]]"
 aliases:
   - "2026-05-07 今天读什么｜Anthropic：如何构建有效的 AI Agent"
+summary: "同步自 Slack 的今天读什么｜Anthropic：如何构建有效的 AI Agent，用于 GenGrowth 本地知识库检索、主题聚合和后续 gbrain/wiki 关联。"
 ---
 
 # 今天读什么｜Anthropic：如何构建有效的 AI Agent
