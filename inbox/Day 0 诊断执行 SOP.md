@@ -241,11 +241,11 @@ https://docs.google.com/spreadsheets/d/1NghoVEhpl-XC-3HfaK6rtptF8xyuXLnDyWy-w6r0
 种子词拓展
 https://docs.google.com/spreadsheets/d/1wUCY-E-SKi1KWAFSokH_u-ZurItTA7ROgzvnCrCkspA/edit?usp=sharing
 
-| 产出项 | 数量目标 | 来源字段标注 |
-|-------|---------|-----------|
-| 种子词拓展 | 100–500 条（KD ≤ 60 过滤后）| 种子词拓展 |
-| 社区词 | 20–50 条原话短语 | 社区挖掘 |
-| 趋势词 | 0–30 条（发现即插队执行）| 趋势词 |
+| 产出项   | 数量目标                   | 来源字段标注 |
+| ----- | ---------------------- | ------ |
+| 种子词拓展 | 100–500 条（KD ≤ 60 过滤后） | 种子词拓展  |
+| 社区词   | 20–50 条原话短语            | 社区挖掘   |
+| 趋势词   | 0–30 条（发现即插队执行）        | 趋势词    |
 
 ---
 
