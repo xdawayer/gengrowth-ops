@@ -19,6 +19,8 @@
    1. **选词**：从你的关键词库中选出一个今天想排名的词（如：Aries career horoscope）。
 
    2. **防撞检查**：打开你的表格，Ctrl+F 搜一下这个词。如果之前有人写过，**立刻换一个**。
+   登记表：
+   https://docs.google.com/spreadsheets/d/1HF7FXBMtl4LEySxaDPljRmlKstAKyaDDivLzLubVoSo/edit?usp=sharing
 
    3. **填表登记**：在表格里填入以下必填项（不要思考，按直觉选）：
 
