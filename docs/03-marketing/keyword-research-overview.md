@@ -264,19 +264,24 @@ mindmap
 
 ### 关键词研究层
 
+> 按 GenGrowth 当前优先级排序（高 → 低）。
+
 | SOP 文档 | 覆盖场景 | 状态 |
 |---|---|---|
 | `03-seo/keyword-research-sop.md` | 内容/工具站 + 新到中等 DR + 英文谷歌（主用）| [已有] v2.3 |
+| `03-seo/keyword-research-sop-casual-game.md` | C 端小游戏 / 休闲游戏 | [待建，团队基因强]|
+| `paid-acquisition-keyword-sop.md` | 付费投放词（下一阶段战略重点）| [待建] |
+| `03-seo/keyword-research-sop-ecommerce.md` | 电商分层 | [待建，有合作资源]|
+| `03-seo/keyword-research-sop-portuguese.md` | 巴西葡语 / 拉美西语 | [待建] |
 | `03-seo/keyword-research-sop-mature-site.md` | 老站刷新与修剪 | [待建] |
-| `03-seo/keyword-research-sop-ecommerce.md` | 电商分层 | [待建] |
-| `03-seo/keyword-research-sop-local.md` | 本地 SEO | [待建] |
-| `03-seo/keyword-research-sop-chinese.md` | 中文百度系 | [待建] |
+| `03-seo/keyword-research-sop-b2b-saas.md` | B2B SaaS 决策意图词 | [待建，客户基础弱]|
 | `03-seo/keyword-research-sop-geo.md` | GEO/AEO 专项 | [待建]（当前嵌入主 SOP 第八章）|
-| `03-seo/keyword-research-sop-b2b-saas.md` | B2B SaaS 决策意图词 | [待建] |
 | `03-seo/keyword-research-sop-media.md` | 媒体 / 新闻站 | [待建] |
-| `03-seo/keyword-research-sop-ymyl.md` | YMYL 高权威领域 | [待建] |
 | `02-social-media/social-keyword-sop.md` | 社媒话题词 | [待建] |
-| `paid-acquisition-keyword-sop.md` | 付费投放词 | [待建] |
+| `03-seo/keyword-research-sop-multi-region.md` | 东南亚等多语言 | [待建] |
+| `03-seo/keyword-research-sop-local.md` | 本地 SEO | [暂缓，缺合作资源]|
+| `03-seo/keyword-research-sop-ymyl.md` | YMYL 高权威领域 | [暂缓，缺合作资源]|
+| `03-seo/keyword-research-sop-chinese.md` | 中文百度系 | [不规划]（团队不擅长，市场差异大）|
 
 ### 执行操作层
 
@@ -311,6 +316,7 @@ mindmap
 |------|------|---------|
 | v0.1 | 2026-05-08 | 初稿：搭建 5 决策维度 + 3 承接维度框架，建立 SOP 文档地图（已有/待建状态），引出后续专项 SOP 路径；mermaid mindmap 全景图作为视觉入口 |
 | v0.2 | 2026-05-08 | 框架结构调整：决策维度从 5 维收敛为 4 维输入（业务类型/站点阶段/目标地区/获客方式），原"关键词筛选与优先级"作为执行链路第一步；获客方式内部分类为四类（内容驱动/付费驱动/关系驱动/直接交易），SEO+社媒+社区共属内容驱动；承接维度（3 维）改名为执行链路（4 步骤）；mindmap 同步重构 |
+| v0.3 | 2026-05-09 | 基于 GenGrowth 团队基因与客户资源补充信息调整：①业务类型新增"C 端小游戏 / 休闲游戏"（团队美国+巴西休闲游戏发行经验为强基因），并按能力契合度重排顺序；②目标地区调整——英文谷歌（美国为主）+ 巴西葡语/拉美 双 Tier 1，东南亚多语言 Tier 2，中文百度系标记为"不规划"；③获客方式说明书新增——付费驱动列为下一阶段战略重点（订阅付费业务模式 + 游戏发行付费投放标配）；④本地服务和 YMYL 标"暂缓"（缺合作资源）；⑤SOP 文档地图按优先级重排，casual-game / paid-acquisition / ecommerce SOP 升前，chinese SOP 标"不规划" |
 
 ---
 
