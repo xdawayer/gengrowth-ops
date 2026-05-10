@@ -257,7 +257,7 @@ GenGrowth 现有 SOP v2.3 完全覆盖（六源四桶 + 60–90 天种子实验 
 | 优先级 | SOP 文档 | 驱动 Top | 估计工作量 |
 |---|---|---|---|
 | **P0** | `keyword-research-sop.md` v2.3（已有，持续维护）| Top 1 | 维护 |
-| **P0** | `paid-acquisition-keyword-sop.md`（新建）| Top 2 | 大（团队付费基因待补，需调研 Google Ads / Meta / TikTok 工具链）|
+| **P0** | `../paid-acquisition-keyword-sop.md`（新建）| Top 2 | 大（团队付费基因待补，需调研 Google Ads / Meta / TikTok 工具链）|
 | **P0** | `keyword-research-sop-ecommerce.md`（新建）| Top 3 | 中（电商分层方法论：产品页 / 类目 / 长尾品类）|
 | **P1** | `keyword-research-sop-portuguese.md`（新建）| Top 1 / Top 3 子矩阵的"巴西葡语 / 拉美"分支 | 中 |
 | **P1** | `keyword-research-sop-mature-site.md`（新建）| Top 1 子矩阵的"成熟期"分支 | 中 |
@@ -316,5 +316,5 @@ GenGrowth 现有 SOP v2.3 完全覆盖（六源四桶 + 60–90 天种子实验 
 
 *配套文档：*
 - *上游：`keyword-research-overview.md` v0.4（4 决策维度 + 4 步执行链路框架）*
-- *主用 SOP：`03-seo/keyword-research-sop.md` v2.3（Top 1 直接对应）*
-- *待建：`paid-acquisition-keyword-sop.md`（Top 2 驱动，P0）、`03-seo/keyword-research-sop-ecommerce.md`（Top 3 驱动，P0）、`03-seo/keyword-research-sop-portuguese.md`（巴西葡语扩展，P1）*
+- *主用 SOP：`../03-seo/keyword-research-sop.md` v2.3（Top 1 直接对应）*
+- *待建：`../paid-acquisition-keyword-sop.md`（Top 2 驱动，P0）、`../03-seo/keyword-research-sop-ecommerce.md`（Top 3 驱动，P0）、`../03-seo/keyword-research-sop-portuguese.md`（巴西葡语扩展，P1）*

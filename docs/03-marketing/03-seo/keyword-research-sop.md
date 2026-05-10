@@ -32,7 +32,7 @@ aliases:
 
 ### 本 SOP **不**适合的场景
 
-以下场景不在本 SOP 覆盖范围内，请先到 `../keyword-research-overview.md`（路由总览）按决策维度判断：
+以下场景不在本 SOP 覆盖范围内，请先到 `../01-strategy/keyword-research-overview.md`（路由总览）按决策维度判断：
 
 - 老站 / DR > 50 / 需要刷新与修剪
 - 电商 / 产品页与类目页分层
@@ -702,9 +702,9 @@ Google 搜索各位置标准 CTR：
 | v1.1 | 2026-04-29 | 新增量化评分系统 + 结果衡量标准；来源：/office-hours 产品诊断会话 |
 | v2.0 | 2026-05-08 | 新增竞品选择章节（零）、SERP弱度/AIO风险标注关逻辑；字段调整：SERP弱度→H、自有站DR→I快照、意图→M；新站DR过滤注意事项；DataForSEO；列号全文更新；两步填表移入 Day 0 SOP Step 5 |
 | v2.1 | 2026-05-08 | 执行优先级调整：长尾词升为主战场（约40%产能，矩阵执行），战略词降至最低（≤5篇，门面词）；分类规则/桶内排序/跨桶执行/分类示例全部同步；关键词清单管理更新为A–X 24列实际结构 |
-| v2.2 | 2026-05-08 | 新增「导读：适用范围声明 + 场景路由」章节，明确本 SOP 的适用与不适用场景，引出 `../keyword-research-overview.md` 总路由；新增第八章 GEO/AEO 引用优化（AI 搜索引擎可见性）—— 作为 2026 年起新流量入口的初版方法论嵌入，含与传统 SEO 关系、词型筛选、内容形态、监测方式、主流程整合五个子节 |
+| v2.2 | 2026-05-08 | 新增「导读：适用范围声明 + 场景路由」章节，明确本 SOP 的适用与不适用场景，引出 `../01-strategy/keyword-research-overview.md` 总路由；新增第八章 GEO/AEO 引用优化（AI 搜索引擎可见性）—— 作为 2026 年起新流量入口的初版方法论嵌入，含与传统 SEO 关系、词型筛选、内容形态、监测方式、主流程整合五个子节 |
 | v2.3 | 2026-05-08 | 简化「不适合的场景」清单（去掉指向待建文档的列，统一指向 overview 总路由）；GEO/AEO 章节强化具体可执行性：新增 AI 搜索引擎优先级表（Perplexity / ChatGPT 高，Gemini / Claude 中，中文 AI 划归 chinese SOP）、GEO 潜力评估两步法（词型快筛 + Perplexity 实测验证）、监控流程（周/月节奏）、优化反馈闭环；删除"主表加 Y 列 / 桶内排序"等当前关键词数量少时不必要的内容 |
 
 *配套文档：*
-- *路由总览：`../keyword-research-overview.md`*
+- *路由总览：`../01-strategy/keyword-research-overview.md`*
 - *实验模板：`seed-client-growth-experiment-template.md`*
