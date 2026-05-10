@@ -43,30 +43,32 @@ mindmap
   root((增长营销关键词与转化框架))
     决策维度 四维输入
       业务类型
-        B2B SaaS
-        B2C 工具
+        B2C 工具 早期 SaaS
+        C 端小游戏 休闲游戏
         电商
+        B2B SaaS
         媒体内容
-        本地服务
-        YMYL 高权威
+        本地服务 暂缓
+        YMYL 暂缓
       站点阶段
         新站 DR 0-20
         增长期 DR 20-40
         成熟期 DR 40-60
         头部期 DR 60+
       目标地区
-        英文谷歌
-        中文百度系
-        多语言多国
+        英文谷歌 美国为主
+        巴西葡语 拉美
+        东南亚多语言
+        中文百度系 不规划
       获客方式
-        内容驱动
+        内容驱动 当前核心
           SEO 自然搜索
           社媒营销
           社区运营
-        付费驱动
+        付费驱动 下一阶段重点
           SEM 搜索竞价
           信息流投放
-          应用商店
+          应用商店投放
         关系驱动
           合作分销
           KOL 投放
@@ -112,14 +114,17 @@ mindmap
 
 不同业务类型决定关键词的搜索意图分布、内容形态偏好、转化路径长度。
 
+> 业务类型按 GenGrowth 当前能力契合度排序（高 → 低）。
+
 | 业务类型 | 关键词重心 | 对应 SOP |
 |---|---|---|
-| B2B SaaS | Commercial 意图 + 长尾决策词 | `keyword-research-sop-b2b-saas.md`（待建）|
 | B2C 工具 / 早期 SaaS | 信息词 + 工具型查询 | `03-seo/keyword-research-sop.md`（已有，当前主用）|
-| 电商 | Transactional 意图 + 类目长尾 | `keyword-research-sop-ecommerce.md`（待建）|
+| C 端小游戏 / 休闲游戏 | 游戏品类词 + 攻略词 + ASO 关键词 | `keyword-research-sop-casual-game.md`（待建，团队基因强）|
+| 电商 | Transactional 意图 + 类目长尾 | `keyword-research-sop-ecommerce.md`（待建，有合作资源）|
+| B2B SaaS | Commercial 意图 + 长尾决策词 | `keyword-research-sop-b2b-saas.md`（待建，客户基础弱）|
 | 媒体 / 内容站 | 信息词 + 时效热点 | `keyword-research-sop-media.md`（待建）|
-| 本地服务 | 地理修饰词 + 即时意图 | `keyword-research-sop-local.md`（待建）|
-| YMYL（医/金/法）| 权威解释词 + E-E-A-T | `keyword-research-sop-ymyl.md`（待建）|
+| 本地服务 | 地理修饰词 + 即时意图 | `keyword-research-sop-local.md`（暂缓，缺合作资源）|
+| YMYL（医/金/法）| 权威解释词 + E-E-A-T | `keyword-research-sop-ymyl.md`（暂缓，缺合作资源）|
 
 ### 维度 2：站点阶段
 
@@ -138,17 +143,25 @@ mindmap
 
 不同地区使用不同的搜索引擎、工具链、内容生态。
 
-| 地区 | 主搜索引擎 | 关键词工具 | 内容生态 |
-|---|---|---|---|
-| 英文谷歌 | Google | Ahrefs / SEMrush / DataForSEO | YouTube / Reddit / Quora |
-| 中文百度系 | 百度 / 神马 | 5118 / 站长之家 / 爱站 | 知乎 / 小红书 / 视频号 / 抖音 |
-| 多语言多国 | Google + 本地引擎 | 各地区工具组合 | 本地化重做关键词，hreflang |
+| 地区 | 主搜索引擎 | 关键词工具 | 内容生态 | 优先级 |
+|---|---|---|---|---|
+| 英文谷歌（美国为主，含英 / 加 / 澳新）| Google | Ahrefs / SEMrush / DataForSEO | YouTube / Reddit / Quora | **Tier 1** |
+| 巴西葡语 / 拉美西语 | Google | Ahrefs（葡 / 西语支持）| YouTube / Discord / Reddit | **Tier 1** |
+| 东南亚 / 其他多语言 | Google + 本地引擎 | 各地区工具组合 | TikTok / Telegram / Discord | Tier 2 |
+| 中文百度系 | 百度 / 神马 | 5118 / 站长之家 / 爱站 | 知乎 / 小红书 / 视频号 / 抖音 | **不规划**（团队不擅长百度系，与 Google/Bing 市场差异大）|
 
-> 待建：`keyword-research-sop-chinese.md`、`keyword-research-sop-multi-region.md`
+> **GenGrowth 团队基因锚点**：以美国 + 巴西为主的休闲游戏与工具研发发行经验，与 Google 谷歌生态强相关。中文百度系短期不拓展。
+>
+> 待建：`keyword-research-sop-portuguese.md`（巴西葡语 + 拉美西语）、`keyword-research-sop-multi-region.md`（东南亚等）
 
 ### 维度 4：获客方式
 
-获客方式分四大类，每类的关键词逻辑（或"非关键词逻辑"）不同。**内容驱动型三类**（SEO / 社媒 / 社区）共用大部分关键词方法论，是本框架的核心层。
+获客方式分四大类，每类的关键词逻辑（或"非关键词逻辑"）不同：
+
+- **内容驱动型**（SEO / 社媒 / 社区）：共用大部分关键词方法论，是本框架的**当前核心层**
+- **付费驱动型**（SEM / 信息流 / 应用商店）：是 GenGrowth **下一阶段战略重点**——大部分订阅付费业务在内容驱动有起步流量后需要付费驱动放大；C 端小游戏发行场景下付费投放是标配
+- **关系驱动型**（合作分销 / KOL）：作为协同补充，不独立成主战场
+- **直接交易型**（电商搜索 / 类目流量）：电商业务的主战场
 
 #### 4.1 内容驱动型（核心层）
 
@@ -158,13 +171,15 @@ mindmap
 | 社媒营销（Twitter / LinkedIn / 小红书 / 视频号）| 话题词 + 标签词，意图弱、共鸣强 | `02-social-media/social-keyword-sop.md`（后续建）|
 | 社区运营（Reddit / Quora / IH / 知乎）| 真实用语 + 趋势话题 | 见 SEO SOP 来源 4 |
 
-#### 4.2 付费驱动型
+#### 4.2 付费驱动型（下一阶段战略重点）
+
+> 当前 GenGrowth 团队付费基因正在补建。在订阅付费业务模式下，付费驱动是规模化的关键放大器；游戏发行场景下付费投放是标配。
 
 | 子类 | 关键词角色 | 对应 SOP |
 |---|---|---|
-| SEM（Google Ads / 百度推广）| 商业意图词 + 出价 + 落地页匹配 | `paid-acquisition-keyword-sop.md`（后续建）|
-| 信息流投放（Meta / TikTok / 抖音）| 兴趣标签 + 创意素材，关键词角色弱 | 同上 |
-| 应用商店投放（ASA / 应用宝）| 应用商店关键词与竞价 | 同上 |
+| SEM（Google Ads）| 商业意图词 + 出价 + 落地页匹配 | `paid-acquisition-keyword-sop.md`（后续建，P0）|
+| 信息流投放（Meta / TikTok）| 兴趣标签 + 创意素材，关键词角色弱 | 同上 |
+| 应用商店投放（ASA / Google Play UAC）| 应用商店关键词与竞价 | 同上（游戏与工具应用必备）|
 
 #### 4.3 关系驱动型
 
