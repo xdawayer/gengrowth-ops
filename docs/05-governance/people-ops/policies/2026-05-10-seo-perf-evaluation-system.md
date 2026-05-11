@@ -1,9 +1,9 @@
 ---
 title: SEO 运营绩效评估体系
 date: 2026-05-10
-updated: 2026-05-10
+updated: 2026-05-11
 type: policy
-version: v0.2
+version: v0.3
 status: draft
 author: Lynne
 tags:
@@ -17,7 +17,7 @@ aliases:
   - seo-perf-evaluation
 ---
 
-# SEO 运营绩效评估体系 v0.2（早期精简版）
+# SEO 运营绩效评估体系 v0.3（早期精简版）
 
 > **适用对象**：当前 SEO 运营（1 人）。社媒/内容岗位入职后可直接复用，仅需替换主指标。
 > **状态**：draft，与 SEO 同事公示并跑过一个完整季度后转 stable。
@@ -102,24 +102,22 @@ aliases:
 | 合格 | 输出量达成、规范基本合规、抽审内容能用 |
 | 待改进 | 输出量明显不足、或文档质量需多次返工、或频繁规范错误 |
 
-**唯一自动化产物**：`tools/scripts/weekly-perf-snapshot.sh`
+**核心审计机制**：`seo-quality-audit` subagent
 
-每周一 09:30 自动跑：
+详细评审标准与 agent 行为约定见 [SEO 输出质量评审标尺 Rubric](2026-05-11-seo-output-quality-rubric.md)。
 
-```
-1. 拉取本周 git log（限 SEO 相关目录）
-2. 调用 doc-audit subagent 跑审计
-3. 输出一份 weekly snapshot（< 1 屏）：
-   • 本周新增/更新文档清单（含路径）
-   • doc-audit 发现的规范问题
-   • 上级注意：是否有需要抽审的文档
-4. 写到 docs/05-governance/people-ops/perf-reports/seo/{YYYY-WW}.md
-5. 不推送、不预警，上级有空时自己看
-```
+执行方式：
 
-**无法自动化（明确放弃）**：
-- 文档"业务价值"判断 → 上级月度抽 1 份做点评（口头即可）
-- 时效性 → 早期 1 人靠 1on1 同步即可
+1. Lynne 在 Claude Code 中手动触发"评估 SEO 输出"
+2. Agent 先列出待评审清单，等 Lynne 拍板
+3. 按 rubric 跑 P0/P1/P2 三档评分，输出统一格式报告
+4. 主文档写入 `docs/05-governance/people-ops/perf-feedback/seo/{YYYY-WW}-quality-audit.md`（SEO 本人可读不可写）
+5. 不进 cron，由 Lynne 控制节奏（前期每周 1 次，后期可降为月度抽审）
+
+**配套**：
+
+- 规范类检查（命名/位置/层级）由 `doc-audit` subagent 兜底，质量审计不重复
+- 文档"业务价值"判断与"时效性"通过月度 1on1 同步
 
 ---
 
@@ -175,9 +173,10 @@ aliases:
 
 | 工具 | 用途 | 频率 | 状态 |
 |------|------|------|------|
-| `tools/scripts/weekly-perf-snapshot.sh` | 周度文档快照 + 审计 | 每周一自动 | 待落地 |
-| GA4 / GSC 后台 | 月度上级直接看 | 自助 | 默认已接入 |
-| 季度评估表（Markdown 模板） | 季度回顾 | 每季 1 次 | 待落地 |
+| `seo-quality-audit` subagent | 按 rubric 评 SEO 输出内容质量 | 手动触发，前期每周 1 次 | 待落地 |
+| `doc-audit` subagent | 规范/治理检查（命名/位置/层级） | 按需触发 | ✅ 已可用 |
+| GA4 / GSC 后台 | 月度上级直接看 PV 趋势 | 自助 | 默认已接入 |
+| 季度评估留档模板 | 季度回顾 | 每季 1 次 | 待落地 |
 
 **不做的**：360 互评、笔试系统、飞书机器人推送、信号扫描脚本、月度自动报告。团队 ≥ 3 人再说。
 
@@ -191,7 +190,7 @@ aliases:
   ② 上级看 GA4 + 周度 snapshot 汇总 + 抽审 2 份文档
   ③ 上级写 1 页评估（4 维度 + 综合评级 + 下季成长建议）
   ④ 30–60 分钟 1on1 对齐
-  ⑤ 留档：docs/05-governance/people-ops/perf-reports/seo/{YYYY-Q}.md
+  ⑤ 留档：docs/05-governance/people-ops/{YYYY-QN}-perf-review-seo.md
 ```
 
 **整体评级规则**：
@@ -225,6 +224,12 @@ aliases:
 
 - v0.1（2026-05-09）：首版框架，含权重和 1-5 分制
 - v0.2（2026-05-10）：取消量化权重和分数；改用四档；月度降级为轻 1on1；自动化只保留 1 个脚本
+- v0.3（2026-05-11）：
+  - 日常工作维度的自动化产物从"git log 快照脚本"改为 `seo-quality-audit` subagent + 独立 rubric 文档
+  - 评审对象明确为 `docs/repo/gengrowth-ops/inbox/` 下的 SEO 运营产出（增长实验记录 / 关键词主表批次 / 内容创作 SOP），不再误审创始人维护的框架文档
+  - 归档路径调整：周/月度评估主文档建在 `docs/05-governance/people-ops/perf-feedback/seo/`（权威区，不可被被评估人编辑），单向同步出只读副本
+  - 季度评估留档由 `perf-reports/seo/{YYYY-Q}.md` 改为根目录平铺 `{YYYY-QN}-perf-review-seo.md`
+  - 删除已建的 `tools/scripts/weekly-perf-snapshot.sh` 与 `perf-reports/` 目录
 
 ---
 
@@ -232,6 +237,8 @@ aliases:
 
 - 公司价值观：`docs/01-company/公司价值观.md`
 - 员工手册：`docs/05-governance/people-ops/policies/员工手册.md`
-- 周度 snapshot：`tools/scripts/weekly-perf-snapshot.sh`（待落地）
-- 评估留档目录：`docs/05-governance/people-ops/perf-reports/seo/`
-- 文档审计 agent：`.claude/agents/doc-audit.md`
+- **内容质量 Rubric**：`docs/05-governance/people-ops/policies/2026-05-11-seo-output-quality-rubric.md`
+- **质量审计 agent**：`.claude/agents/seo-quality-audit.md`（待落地）
+- 文档治理 agent：`.claude/agents/doc-audit.md`
+- 周/月度评估留档目录：`docs/05-governance/people-ops/perf-feedback/seo/`
+- 季度评估留档命名：`docs/05-governance/people-ops/{YYYY-QN}-perf-review-seo.md`
