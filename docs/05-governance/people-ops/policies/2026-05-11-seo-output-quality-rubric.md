@@ -279,14 +279,25 @@ Agent 启动评审前必须：
 | 月度反馈汇总 | 同上目录，`{YYYY-MM}-monthly-review.md` | 同上 | ✅ |
 | 季度评估留档 | `docs/05-governance/people-ops/{YYYY-QN}-perf-review-seo.md` | 不同步 | ✅ |
 
-### 9.3 同步机制（待落地）
+### 9.3 同步机制
 
-主文档同步至 SEO 可读副本，两种可选实现：
+**采用方案**：单向 push 到 SEO 的 gengrowth-ops repo 只读目录。
 
-- **方案 A**：单向 push 到 SEO 的 gengrowth-ops repo 中专门的只读目录（`gengrowth-ops/perf-feedback/`），由 sync 脚本定期跑
-- **方案 B**：SEO 直接获得 wiki 中 `docs/05-governance/people-ops/perf-feedback/seo/` 的只读访问，不做物理同步
+**实现约定**：
 
-具体方案待与现有 `gengrowth-repos-sync.sh` 等基础设施对齐后确定。
+- **源**：`docs/05-governance/people-ops/perf-feedback/seo/`（wiki，Lynne 可写）
+- **目标**：`gengrowth-ops/perf-feedback/`（SEO 的 repo，标记为 Lynne 管理区，SEO 不允许提交修改）
+- **同步方向**：仅 wiki → gengrowth-ops，永不反向
+- **同步触发**：每次 Lynne 落新评审报告后手动跑同步脚本，或挂到现有 `gengrowth-repos-sync.sh` 类似的定时机制中
+- **冲突处理**：目标目录任何本地修改都会被覆盖（这是设计意图，不是 bug）
+
+**SEO 同事需明确知晓**：
+
+- `gengrowth-ops/perf-feedback/` 目录由 Lynne 单向写入
+- 看到内容可直接读，但**不要修改、不要在该目录提交 commit**
+- 有异议通过 1on1 或评论方式提出，不在文件上改
+
+**脚本落地**：`tools/scripts/sync-perf-feedback.sh`（待建，Step 3 同步建）
 
 ---
 
