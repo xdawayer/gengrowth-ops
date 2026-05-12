@@ -44,33 +44,31 @@
 
   在登记表中录入：目标词、Search Intent、Tier、以及本篇要占据主权的 Primary Entity。
   
-  关于Search Intent
+  **关于 Search Intent (意图判定)**
   
-   在 Google 搜索你的关键词后，观察前 5 名非广告结果的标题：
+   在 Google 搜索你的关键词后，观察前 5 名非广告结果：
 
-   * **如果标题包含**：What is..., Meaning of..., Guide to...
+   * **模式 A：标题特征匹配**（最快）：
+       * 包含 What is/Meaning -> **Info** (基础认知)
+       * 包含 Best/Top 10/Review -> **Compare** (商业对比)
+       * 包含 How to/Steps -> **Tutorial** (具体操作)
 
-       * 👉 **判定意图：Info** (获取基础知识/定义)
+   * **模式 B：载体功能判定**（针对杂乱结果）：
+       * 如果前 3 名是 **工具/计算器/查询表** -> 👉 **Utility** (用户想要直接结果，不想要阅读)
+       * 如果前 3 名是 **YouTube/图片/视频** -> 👉 **Visual/Demo** (用户想看动作，不想看文字)
+       * 如果前 3 名全是 **Reddit/Quora/论坛** -> 👉 **Experience** (用户在找“真人血泪史”，不信官方博客)
+       * **保底规则**：若结果极端杂乱且无上述特征，标记为 **Discovery**，自动归为 **Tier 3** 极简占位。
 
-   * **如果标题包含**：Best..., Top 10..., Review, Compare
-
-       * 👉 **判定意图：Compare** (做对比/做决策)
-
-   * **如果标题包含**：How to..., Steps to..., Process
-
-       * 👉 **判定意图：Tutorial** (学具体操作/教程)
-
-   * **如果标题包含**：Buy, Pricing, Discount
-
-       * 👉 **判定意图：BOFU** (直接买/要变现)
- 
-  关于Primary Entity
+  **关于 Primary Entity (主权实体提取)**
   
-  **1. 搜证提取（AI 辅助）**
+  **1. 搜证提取（针对不同载体）**
 
-   - **动作**：将 Google 搜索排名前 3 的竞品文章全文（或大纲）复制给 AI。
+   - **情况 A：竞品是文章** -> 复制全文或大纲给 AI。
+   - **情况 B：竞品是视频** -> 复制视频标题 + 简介（Description）+ 前 3 条高赞评论给 AI。
+   - **情况 C：竞品是 Reddit/论坛** -> 复制楼主的帖子 + 前 2 个层主（Level 1 Reply）的对话给 AI。
+   - **情况 D：完全无法提取** -> 询问 AI：“针对 [关键词]，如果排名前三的是视频/论坛，基于行业常识，用户在这些讨论中最常提到的 5 个核心专业术语（Entities）是什么？”
 
-   - **指令**：“分析以下三篇文章，提取出出现频率最高、且最能代表该话题专业性的 5 个核心术语（Entities）。”
+   - **AI 提取指令**：“分析以上素材，提取出出现频率最高、且最能代表该话题专业性的 5 个核心术语（Entities）。”
 
    - **示例**：如果你写“白羊座职业运势”，AI 可能会吐出：Midheaven (中天), 10th House (十宫), Mars (火星), Saturn (土星), Transits (行运)。
 
