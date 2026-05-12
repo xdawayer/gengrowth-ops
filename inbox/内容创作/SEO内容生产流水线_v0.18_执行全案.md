@@ -8,17 +8,20 @@
 
 在开始任何动作前，请确保你的协作表（Notion 或 Google Sheets）已建立以下字段。这些字段是 AI 组装的“燃料”。
 
-| 字段名称 | 核心逻辑 | 填写示例 |
-| :--- | :--- | :--- |
-| **Keyword** | 目标词 | `Aries career horoscope` |
-| **Intent** | 搜索意图 (User Goal) | `Compare` (对比/决策) |
-| **Tier** | 投入强度 (T1/T2/T3) | `Tier 1` (重装执行) |
-| **Template** | 结构模板 | `Comparison` (对比表模式) |
-| **Entity** | 主权术语 (本文领土) | `Midheaven` (中天) |
-| **Friction** | 真实证据 (Reddit/论坛) | `用户排盘因时区导致 2° 误差` |
-| **Logic** | 底层机制与权衡 | `想要速度就得牺牲精度` |
-| **CTA** | 商业出口 | `/app/calculator-pro` |
-| **Status** | 实时状态 | `已发布 (Published)` |
+| 字段名称 (Header) | 汉语翻译 | 填写时机 | 核心注释 (Notes) |
+| :--- | :--- | :--- | :--- |
+| **Keyword** | 目标词 | Step 1 | 文章要排名的核心主词。 |
+| **Intent** | 搜索意图 | Step 1 | 用户搜索该词的真实目的 (Info/Compare/Tutorial 等)。 |
+| **Tier** | 生产定级 | Step 1 | 决定投入成本的等级 (T1-T3)。 |
+| **Template** | 模板模式 | Step 1 | 文章的结构框架 (Definition/Comparison/Tutorial 等)。 |
+| **Entity** | 主权实体 | Step 2 | 本文占据主权的专业术语，防止站内内容内耗。 |
+| **Friction** | 痛点证据 | Step 3 | 从 Reddit/论坛抓取的具体真实案例或报错。 |
+| **Logic** | 底层逻辑 | Step 3 | 解释痛点的 Mechanism (机制) 与 Trade-off (权衡)。 |
+| **CTA** | 转化出口 | Step 5 | 本文引导用户点击的产品链接或注册入口。 |
+| **GSC Keywords** | GSC 增补词 | 发布 30 天后 | 从 Google Search Console 抓取的该页面已获得排名但正文中缺失的词，用于内容刷新。 |
+| **Last Audit** | 审计日期 | 定期审计 | 该页面最后一次进行内容更新或质量检查的日期。 |
+| **Status** | 执行状态 | 实时更新 | 记录流水线进度 (选题/搜证/初稿/质检/Published)。 |
+| **URL** | 在线链接 | Step 5 | 文章发布后的正式在线网址。 |
 
 ---
 
