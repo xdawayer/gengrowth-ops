@@ -239,7 +239,7 @@ https://docs.google.com/spreadsheets/d/1NghoVEhpl-XC-3HfaK6rtptF8xyuXLnDyWy-w6r0
 
 **本步骤产出（完成后需填入关键词主表）：**
 种子词拓展
-https://docs.google.com/spreadsheets/d/1wUCY-E-SKi1KWAFSokH_u-ZurItTA7ROgzvnCrCkspA/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1rXBkcSaSCVOUYivfZxwtxXhzBcwVqdCgENZhORqqMcU/edit?usp=sharing
 
 | 产出项   | 数量目标                   | 来源字段标注 |
 | ----- | ---------------------- | ------ |
