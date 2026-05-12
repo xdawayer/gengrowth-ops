@@ -4,7 +4,7 @@
 
 ---
 
-## 📊 第一部分：基础设施 - 选题登记表 (Topic Registry)
+## 📊 第一部分：基础设施 - [选题登记表](https://docs.google.com/spreadsheets/d/1JDaPu2llI9SOzISi2YsmkUELI0ArnZewFv_frQ_Wkfs/edit?usp=sharing) (Topic Registry)
 
 在开始任何动作前，请确保你的协作表（Notion 或 Google Sheets）已建立以下字段。这些字段是 AI 组装的“燃料”。
 
@@ -47,13 +47,13 @@
 | **Tier 3 (占位)** | 搜索结果极其冷门 或 极其杂乱 | **极速覆盖**：不搜证，直接让 AI 组装，检查开头即可发布，工时控制在 10min 内。 |
 
 ### 3. Template Mode (模板模式)
-| 选项 | 对应意图 | 结构核心 (Must-have) |
-| :--- | :--- | :--- |
-| **Definition** | Info | **Answer Lock** (开头 120 字加粗直给) + 机制解释。 |
-| **Comparison** | Compare | **对比矩阵表** + 3 个以上的 Trade-off (代价) 权衡。 |
-| **Tutorial** | Tutorial | **Step-by-Step 动作条** + 关键步骤的 Friction (报错) 提醒。 |
-| **Programmatic** | Utility / BOFU | **极简文本** + 极其醒目的 CTA 按钮或数据计算框。 |
-| **Case Study** | Experience | **故事化叙述** + 真实截图/引用 + 最终结果数据。 |
+| 选项               | 对应意图           | 结构核心 (Must-have)                               |
+| :--------------- | :------------- | :--------------------------------------------- |
+| **Definition**   | Info           | **Answer Lock** (开头 120 字加粗直给) + 机制解释。         |
+| **Comparison**   | Compare        | **对比矩阵表** + 3 个以上的 Trade-off (代价) 权衡。          |
+| **Tutorial**     | Tutorial       | **Step-by-Step 动作条** + 关键步骤的 Friction (报错) 提醒。 |
+| **Programmatic** | Utility / BOFU | **极简文本** + 极其醒目的 CTA 按钮或数据计算框。                 |
+| **Case Study**   | Experience     | **故事化叙述** + 真实截图/引用 + 最终结果数据。                  |
 
 ---
 
