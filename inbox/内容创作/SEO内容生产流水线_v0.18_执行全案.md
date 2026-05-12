@@ -1,100 +1,108 @@
-# 🚀 SEO 内容生产流水线 (v0.18 · 工业执行版)
+# 🚀 SEO 内容生产流水线 (v0.18 · 工业执行全案)
 
-> **设计准则**：动作即登记，零件即资产。拒绝文学创作，只准工业组装。
-
----
-
-## 📊 选题登记表 (Topic Registry) 表头标准
-在执行 SOP 前，请确保你的管理表格具备以下字段：
-
-| 字段名称 | 对应英文 | 填写时机 | 填写内容示例 |
-| :--- | :--- | :--- | :--- |
-| **目标词** | Keyword | Step 1 | Aries career horoscope |
-| **搜索意图** | Intent | Step 1 | Info / Compare / Tutorial / Utility / Experience |
-| **内容等级** | Tier | Step 1 | Tier 1 (重装) / Tier 2 (标准) / Tier 3 (极简) |
-| **模板模式** | Template | Step 1 | Definition / Comparison / Tutorial / Programmatic |
-| **主权实体** | Entity | Step 2 | Midheaven (中天) |
-| **痛点证据** | Friction | Step 3 | Reddit 案例：用户排盘时因时区选错导致 2° 误差 |
-| **底层逻辑** | Logic | Step 3 | 机制：历法偏移；权衡：追求速度 vs 追求精度 |
-| **转化出口** | CTA | Step 5 | `/app/calculator-pro` |
-| **执行状态** | Status | 实时更新 | 选题 / 搜证 / 质检 / Published |
-| **在线链接** | URL | Step 5 | `https://example.com/blog/aries-career` |
+> **核心哲学**：不靠灵感写作，只靠逻辑组装。将 SEO 文章拆解为标准化零件，确保每一篇都具备“信息增益”。
 
 ---
 
+## 📊 第一部分：基础设施 - 选题登记表 (Topic Registry)
 
-### STEP 1：准入预检与规格锁定 (10 分钟)
-**目标**：判定词的生死，锁定生产规格。
+在开始任何动作前，请确保你的协作表（Notion 或 Google Sheets）已建立以下字段。这些字段是 AI 组装的“燃料”。
 
-1.  **搜词预检**：在 Google 无痕模式搜索关键词，观察前 10 名结果。
-    *   **快败红线**：若产品首页/注册页 > 6 个 -> **直接放弃**。
-2.  **定意图 & 定模板**：
-    *   若结果全是“什么是...” -> **Intent: Info** | **Template: Definition**
-    *   若结果全是“Best/Review/对比” -> **Intent: Compare** | **Template: Comparison**
-    *   若结果全是“How to/步骤” -> **Intent: Tutorial** | **Template: Tutorial**
-    *   若结果全是工具/视频/论坛 (杂乱) -> **Intent: Experience/Utility** | **Template: Programmatic**
-3.  **定级别 (6:3:1 法则)**：
-    *   Reddit/论坛 ≥ 3 个 -> **Tier 1 (必须去 Reddit 搜证)**
-    *   商业价值高但竞品平庸 -> **Tier 1**
-    *   纯科普/长尾占位 -> **Tier 2 或 Tier 3**
-4.  **✍️ 登记动作**：在表中填入 **[Keyword]**, **[Intent]**, **[Tier]**, **[Template]**。并将 **[Status]** 设为 `选题`。
-
----
-
-### STEP 2：实体主权搜证 (5 分钟)
-**目标**：确定本文在站内的“独特性”，防止内容同质化。
-
-1.  **提取术语 (Entities)**：
-    *   **文章竞品**：将前三名大纲丢给 AI 提取核心术语。
-    *   **视频/论坛竞品**：将视频简介或 Reddit 楼主描述丢给 AI 提取核心术语。
-2.  **查重判定**：在登记表中 `Ctrl+F` 搜索 AI 提取出的术语。
-    *   **原则**：避开已被其他文章占据的 Entity。
-3.  **✍️ 登记动作**：选出一个全站唯一的、最能代表专业性的术语，填入 **[Entity]**。
+| 字段名称 | 核心逻辑 | 填写示例 |
+| :--- | :--- | :--- |
+| **Keyword** | 目标词 | `Aries career horoscope` |
+| **Intent** | 搜索意图 (User Goal) | `Compare` (对比/决策) |
+| **Tier** | 投入强度 (T1/T2/T3) | `Tier 1` (重装执行) |
+| **Template** | 结构模板 | `Comparison` (对比表模式) |
+| **Entity** | 主权术语 (本文领土) | `Midheaven` (中天) |
+| **Friction** | 真实证据 (Reddit/论坛) | `用户排盘因时区导致 2° 误差` |
+| **Logic** | 底层机制与权衡 | `想要速度就得牺牲精度` |
+| **CTA** | 商业出口 | `/app/calculator-pro` |
+| **Status** | 实时状态 | `已发布 (Published)` |
 
 ---
 
-### STEP 3：信息增益搜证 (20 分钟)
-**目标**：抓取竞品没有的“真实零件”，拒绝 AI 废话。
+## 🛠 第二部分：五步标准化生产流程
 
-1.  **Friction Mining (痛点挖掘)**：
-    *   **Tier 1 必做**：搜索 `site:reddit.com "keyword" (sucks|problem|worst)`。
-    *   **记录标准**：必须包含具体数字（%, $, hours）或具体报错（403, offset 2°）。
-2.  **提炼 Logic**：将痛点发给 AI，要求输出：
-    *   **Mechanism (机制)**：导致问题的底层科学/技术逻辑。
-    *   **Trade-off (权衡)**：如果要获得 X，通常必须牺牲什么 Y。
-3.  **✍️ 登记动作**：将抓到的案例填入 **[Friction]**，将 AI 提炼的逻辑填入 **[Logic]**。并将 **[Status]** 改为 `搜证完成`。
+### STEP 1：准入预检与规格锁定 (决定“做不做”)
+> **SEO 价值**：防止在无法排名的词（如纯产品词）上浪费工时，确保每一分投入都有回报。
+
+1.  **SERP 扫描**：在 Google 无痕模式搜索关键词。
+    *   **快败红线 (Fail Fast)**：若搜索结果前 10 名中，产品首页或注册页占了 6 个以上，**立即放弃**，将该词移交给“落地页优化组”。
+2.  **意图判定 (Search Intent)**：
+    *   **标题特征**：包含 "What is" (Info), "Best" (Compare), "How to" (Tutorial)。
+    *   **载体判定**：若全是视频 -> 用户想看 Demo；若全是 Reddit -> 用户想听真话。
+3.  **定级与选模**：
+    *   **Tier 1**：Reddit 讨论多或商业价值高。
+    *   **Template**：根据意图选模式（Definition / Comparison / Tutorial / Programmatic）。
+
+**✍️ 登记动作**：在表中填入 `Keyword`, `Intent`, `Tier`, `Template`。
+> **💡 避坑指南**：不要凭直觉定意图，必须看 Google 现在排在前面的页面长什么样。
 
 ---
 
-### STEP 4：AI 组装生产 (10 分钟)
-**目标**：将表中的零件喂给 AI，一键出稿。
+### STEP 2：实体主权搜证 (决定“独特性”)
+> **SEO 价值**：告诉 Google 你的文章拥有某个专业领域的“解释权”，避免与站内已有内容发生内耗（Cannibalization）。
 
-1.  **发送法律**：将《System Prompt》全文发送给 AI。
-2.  **发送变量包**：根据登记表内容，按以下格式发送：
+1.  **竞品术语提取**：
+    *   利用 AI 分析前三名竞品（文章、视频简介或论坛摘要）。
+    *   提取出 5 个代表该话题专业性的术语（Entities）。
+2.  **主权查重**：在登记表中 `Ctrl+F` 搜索这些术语。
+    *   **原则**：选出一个**从未被其他文章作为“主词”**的术语。
+
+**✍️ 登记动作**：选定一个核心术语填入 `Entity`。
+> **💡 避坑指南**：主权实体越具体越好，不要选“Astrology”这种大词，要选“Midheaven”这种细分词。
+
+---
+
+### STEP 3：信息增益搜证 (注入“灵魂零件”)
+> **SEO 价值**：这是对抗 AI 同质化的核心。通过真实世界的案例（Friction）和逻辑（Logic），提升页面的“专家度 (E-E-A-T)”。
+
+1.  **真实痛点挖掘 (Friction Mining)**：
+    *   **动作**：搜索 `site:reddit.com "keyword" (sucks|problem|bad)`。
+    *   **目标**：找一个带数字或具体报错的“血泪史”。
+2.  **逻辑提炼 (Logic)**：
+    *   **Mechanism (机制)**：为什么用户会遇到这个坑？（技术/科学解释）。
+    *   **Trade-off (权衡)**：如果用户想获得 A，必须牺牲 B（例如：免费版通常牺牲隐私）。
+
+**✍️ 登记动作**：填入 `Friction` 案例和 `Logic` 结论。
+> **💡 避坑指南**：严禁在 Friction 栏填形容词（如“很难用”），必须填具体事实（如“API 权限未开导致 403 报错”）。
+
+---
+
+### STEP 4：AI 组装生产 (自动化执行)
+> **SEO 价值**：通过结构化的指令包，强制 AI 输出高密度、低废话的内容。
+
+1.  **发送燃料包**：先发送系统提示词，再发送变量包：
     ```markdown
-    # Execute Assembly v0.18
-    - Keyword: {目标词}
-    - Intent: {意图}
-    - Template: {模板模式}
-    - Primary Entity: {主权实体}
-    - Friction Case: {痛点证据}
-    - Logic: {底层逻辑}
-    - Requirements: 开头 120 字加粗直给结论；清理禁词；数字密度 > 3。
+    # Assembly v0.18
+    Keyword: {Keyword} | Intent: {Intent} | Template: {Template}
+    Primary Entity: {Entity}
+    Friction Case: {Friction}
+    Logic: {Logic}
     ```
-3.  **红线质检**：检查 AI 是否使用了禁词（leverage/unlock/synergy），数字是否真实，开头是否够快。
+2.  **红线质检**：
+    *   开头前 120 字是否**加粗并直接回答**了用户疑问？
+    *   全文数字密度（%, $, hours）是否丰富？
+    *   是否清理了 AI 禁词（synergy, leverage 等）？
+
+**✍️ 登记动作**：更新 `Status` 为“初稿完成/质检中”。
 
 ---
 
-### STEP 5：发布与语义布线 (5 分钟)
-**目标**：接入站点结构，完成商业闭环。
+### STEP 5：发布与语义布线 (商业闭环)
+> **SEO 价值**：通过内链构建 Topic Cluster，通过 CTA 实现流量转金。
 
-1.  **插入内链**：文章前 30% 必须链接至对应的 **Pillar Page**。
-2.  **挂载转化**：在描述 **Friction (痛点)** 的位置，紧跟插入 **[CTA]** 链接。
-3.  **✍️ 登记动作**：在表中填入正式 **[URL]**，并将 **[Status]** 改为 `Published`。
+1.  **向上链接**：前 30% 必须包含一个指向 **Pillar Page** 的链接。
+2.  **场景化转化**：在 Step 3 提到的痛点下方 20 字内，植入你的 `CTA` 链接。
+3.  **全量同步**：将搜到的 Friction 存入《统一素材库》，作为公司资产。
+
+**✍️ 登记动作**：填写正式 `URL`，将 `Status` 改为 `Published`。
 
 ---
 
-## 📉 执行红线 (Red Lines)
-*   **不登记，不准写**：任何一列（尤其是 Friction 和 Logic）为空时，严禁进入出稿环节。
-*   **资产同步**：搜到的 Friction 必须同时存入《统一素材库》，方便以后秒调取。
-*   **AI 降级**：Tier 3 文章可以跳过 Step 3，直接用 AI 专家模拟法生成。
+## 📉 三大执行红线 (Zero Tolerance)
+
+1.  **字段空缺红线**：只要 `Friction` 或 `Logic` 是空的，该任务自动作废，严禁出稿。
+2.  **禁词红线**：出现一个 AI 禁词，整段重写。
+3.  **资产库优先红线**：如果《统一素材库》里已有同类素材，严禁重新去 Reddit 搜索，直接复用。
