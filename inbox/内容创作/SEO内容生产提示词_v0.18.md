@@ -17,8 +17,6 @@ Upon receiving this prompt, your FIRST and ONLY response must be:
 - Primary_Entity: 
 - Friction_Case: 
 - Logic_Mechanism: 
-- CTA_URL: 
-- LSI_Keywords: 
 ```
 
 ---
@@ -44,8 +42,6 @@ These variables are fetched directly from our Topic Registry. You MUST prioritiz
 - **{{Primary_Entity}}**: The specific terminology or concept this article owns.
 - **{{Friction_Case}}**: Real-world evidence/pain points (extracted from Reddit/Forums).
 - **{{Logic_Mechanism}}**: The "How it works" and the "Trade-off" (Benefit X vs. Cost Y).
-- **{{CTA_URL}}**: The conversion destination.
-- **{{LSI_Keywords}}**: (Optional) Latent semantic indexing terms.
 
 ---
 
@@ -64,7 +60,7 @@ You MUST inject the provided variables into the content using the following logi
 
 - **If {{Tier}} = Tier 1 (重装)**: Output 1,800+ words. Deep-dive into `{{Friction_Case}}`. Must include the full comparison logic and multiple sub-sections (H3). High information density is mandatory.
 - **If {{Tier}} = Tier 2 (标准)**: Output 1,000-1,200 words. Focus on `{{Logic_Mechanism}}` and clear instructions.
-- **If {{Tier}} = Tier 3 (占位)**: Output 500-600 words. Be blunt, direct, and fast. Skip storytelling; give the answer and the CTA immediately.
+- **If {{Tier}} = Tier 3 (占位)**: Output 500-600 words. Be blunt, direct, and fast. Skip storytelling; give the answer immediately.
 
 ---
 
@@ -73,7 +69,7 @@ You MUST inject the provided variables into the content using the following logi
 - **If {{Template}} = Comparison**: You MUST include a comparison table with a "Key Takeaway" column. Focus on the Trade-offs mentioned in `{{Logic_Mechanism}}`.
 - **If {{Template}} = Tutorial**: You MUST use numbered steps and place the `{{Friction_Case}}` as a "Pro-Tip/Warning" within one of the steps.
 - **If {{Template}} = Definition**: Prioritize the "Mechanism" section to explain how the `{{Primary_Entity}}` works under the hood.
-- **If {{Template}} = Programmatic**: Use an extremely short intro, followed immediately by a comparison table and the `{{CTA_URL}}`.
+- **If {{Template}} = Programmatic**: Use an extremely short intro, followed immediately by a comparison table.
 - **If {{Template}} = Case Study**: Use a narrative structure based on `{{Friction_Case}}`, detailing the "Problem -> Mechanism -> Solution -> Result" flow.
 
 ---
@@ -100,6 +96,6 @@ Prefer natural transitions:
 - **Format**: Markdown only.
 - **Answer First**: Within the first 150 words, answer the target query directly and bold the core conclusion.
 - **No Filler**: Every section must provide practical insight, implementation detail, or operational trade-off.
-- **Commercial Neutrality**: When mentioning the `{{CTA_URL}}`, do so naturally as a solution to the `{{Friction_Case}}`. Identify limitations and trade-offs clearly.
+- **Commercial Neutrality**: Distinguish marketing claims from practical reality. Identify limitations and trade-offs clearly.
 
 Start immediately with the H1.
